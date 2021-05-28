@@ -14,6 +14,8 @@
 		0882F02826618ED90070EF3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0882F02726618ED90070EF3F /* Assets.xcassets */; };
 		0882F02B26618ED90070EF3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0882F02926618ED90070EF3F /* LaunchScreen.storyboard */; };
 		0882F03926618EF00070EF3F /* RaffleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F03826618EF00070EF3F /* RaffleAppTests.swift */; };
+		0882F0432661ABE30070EF3F /* NewRaffleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F0422661ABE30070EF3F /* NewRaffleCell.swift */; };
+		0882F0472661B6530070EF3F /* AllRafflesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F0462661B6530070EF3F /* AllRafflesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		0882F03626618EF00070EF3F /* RaffleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaffleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0882F03826618EF00070EF3F /* RaffleAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleAppTests.swift; sourceTree = "<group>"; };
 		0882F03A26618EF00070EF3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0882F0422661ABE30070EF3F /* NewRaffleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRaffleCell.swift; sourceTree = "<group>"; };
+		0882F0462661B6530070EF3F /* AllRafflesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRafflesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 				0882F02726618ED90070EF3F /* Assets.xcassets */,
 				0882F02926618ED90070EF3F /* LaunchScreen.storyboard */,
 				0882F02C26618ED90070EF3F /* Info.plist */,
+				0882F0422661ABE30070EF3F /* NewRaffleCell.swift */,
+				0882F0462661B6530070EF3F /* AllRafflesCell.swift */,
 			);
 			path = RaffleApp;
 			sourceTree = "<group>";
@@ -199,6 +205,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0882F0432661ABE30070EF3F /* NewRaffleCell.swift in Sources */,
+				0882F0472661B6530070EF3F /* AllRafflesCell.swift in Sources */,
 				0882F02326618ED80070EF3F /* ViewController.swift in Sources */,
 				0882F01F26618ED80070EF3F /* AppDelegate.swift in Sources */,
 				0882F02126618ED80070EF3F /* SceneDelegate.swift in Sources */,

@@ -7,66 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		086802932661642D005FF863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086802922661642D005FF863 /* AppDelegate.swift */; };
-		086802952661642D005FF863 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086802942661642D005FF863 /* SceneDelegate.swift */; };
-		086802972661642D005FF863 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086802962661642D005FF863 /* ViewController.swift */; };
-		0868029A2661642D005FF863 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086802982661642D005FF863 /* Main.storyboard */; };
-		0868029C26616430005FF863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0868029B26616430005FF863 /* Assets.xcassets */; };
-		0868029F26616430005FF863 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0868029D26616430005FF863 /* LaunchScreen.storyboard */; };
-		086802AA26616431005FF863 /* RaffleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086802A926616431005FF863 /* RaffleAppTests.swift */; };
-		086802B526616431005FF863 /* RaffleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086802B426616431005FF863 /* RaffleAppUITests.swift */; };
+		0882F01F26618ED80070EF3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F01E26618ED80070EF3F /* AppDelegate.swift */; };
+		0882F02126618ED80070EF3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F02026618ED80070EF3F /* SceneDelegate.swift */; };
+		0882F02326618ED80070EF3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F02226618ED80070EF3F /* ViewController.swift */; };
+		0882F02626618ED80070EF3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0882F02426618ED80070EF3F /* Main.storyboard */; };
+		0882F02826618ED90070EF3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0882F02726618ED90070EF3F /* Assets.xcassets */; };
+		0882F02B26618ED90070EF3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0882F02926618ED90070EF3F /* LaunchScreen.storyboard */; };
+		0882F03926618EF00070EF3F /* RaffleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F03826618EF00070EF3F /* RaffleAppTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		086802A626616431005FF863 /* PBXContainerItemProxy */ = {
+		0882F03B26618EF00070EF3F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 086802872661642D005FF863 /* Project object */;
+			containerPortal = 0882F01326618ED80070EF3F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0868028E2661642D005FF863;
-			remoteInfo = RaffleApp;
-		};
-		086802B126616431005FF863 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 086802872661642D005FF863 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0868028E2661642D005FF863;
+			remoteGlobalIDString = 0882F01A26618ED80070EF3F;
 			remoteInfo = RaffleApp;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0868028F2661642D005FF863 /* RaffleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaffleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		086802922661642D005FF863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		086802942661642D005FF863 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		086802962661642D005FF863 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		086802992661642D005FF863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0868029B26616430005FF863 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0868029E26616430005FF863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		086802A026616430005FF863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		086802A526616431005FF863 /* RaffleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaffleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		086802A926616431005FF863 /* RaffleAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleAppTests.swift; sourceTree = "<group>"; };
-		086802AB26616431005FF863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		086802B026616431005FF863 /* RaffleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaffleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		086802B426616431005FF863 /* RaffleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleAppUITests.swift; sourceTree = "<group>"; };
-		086802B626616431005FF863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0882F01B26618ED80070EF3F /* RaffleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaffleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0882F01E26618ED80070EF3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0882F02026618ED80070EF3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0882F02226618ED80070EF3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0882F02526618ED80070EF3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0882F02726618ED90070EF3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0882F02A26618ED90070EF3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0882F02C26618ED90070EF3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0882F03626618EF00070EF3F /* RaffleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaffleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0882F03826618EF00070EF3F /* RaffleAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleAppTests.swift; sourceTree = "<group>"; };
+		0882F03A26618EF00070EF3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0868028C2661642D005FF863 /* Frameworks */ = {
+		0882F01826618ED80070EF3F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		086802A226616431005FF863 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		086802AD26616431005FF863 /* Frameworks */ = {
+		0882F03326618EF00070EF3F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,68 +58,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		086802862661642D005FF863 = {
+		0882F01226618ED80070EF3F = {
 			isa = PBXGroup;
 			children = (
-				086802912661642D005FF863 /* RaffleApp */,
-				086802A826616431005FF863 /* RaffleAppTests */,
-				086802B326616431005FF863 /* RaffleAppUITests */,
-				086802902661642D005FF863 /* Products */,
+				0882F01D26618ED80070EF3F /* RaffleApp */,
+				0882F03726618EF00070EF3F /* RaffleAppTests */,
+				0882F01C26618ED80070EF3F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		086802902661642D005FF863 /* Products */ = {
+		0882F01C26618ED80070EF3F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0868028F2661642D005FF863 /* RaffleApp.app */,
-				086802A526616431005FF863 /* RaffleAppTests.xctest */,
-				086802B026616431005FF863 /* RaffleAppUITests.xctest */,
+				0882F01B26618ED80070EF3F /* RaffleApp.app */,
+				0882F03626618EF00070EF3F /* RaffleAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		086802912661642D005FF863 /* RaffleApp */ = {
+		0882F01D26618ED80070EF3F /* RaffleApp */ = {
 			isa = PBXGroup;
 			children = (
-				086802922661642D005FF863 /* AppDelegate.swift */,
-				086802942661642D005FF863 /* SceneDelegate.swift */,
-				086802962661642D005FF863 /* ViewController.swift */,
-				086802982661642D005FF863 /* Main.storyboard */,
-				0868029B26616430005FF863 /* Assets.xcassets */,
-				0868029D26616430005FF863 /* LaunchScreen.storyboard */,
-				086802A026616430005FF863 /* Info.plist */,
+				0882F01E26618ED80070EF3F /* AppDelegate.swift */,
+				0882F02026618ED80070EF3F /* SceneDelegate.swift */,
+				0882F02226618ED80070EF3F /* ViewController.swift */,
+				0882F02426618ED80070EF3F /* Main.storyboard */,
+				0882F02726618ED90070EF3F /* Assets.xcassets */,
+				0882F02926618ED90070EF3F /* LaunchScreen.storyboard */,
+				0882F02C26618ED90070EF3F /* Info.plist */,
 			);
 			path = RaffleApp;
 			sourceTree = "<group>";
 		};
-		086802A826616431005FF863 /* RaffleAppTests */ = {
+		0882F03726618EF00070EF3F /* RaffleAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				086802A926616431005FF863 /* RaffleAppTests.swift */,
-				086802AB26616431005FF863 /* Info.plist */,
+				0882F03826618EF00070EF3F /* RaffleAppTests.swift */,
+				0882F03A26618EF00070EF3F /* Info.plist */,
 			);
 			path = RaffleAppTests;
-			sourceTree = "<group>";
-		};
-		086802B326616431005FF863 /* RaffleAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				086802B426616431005FF863 /* RaffleAppUITests.swift */,
-				086802B626616431005FF863 /* Info.plist */,
-			);
-			path = RaffleAppUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0868028E2661642D005FF863 /* RaffleApp */ = {
+		0882F01A26618ED80070EF3F /* RaffleApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 086802B926616431005FF863 /* Build configuration list for PBXNativeTarget "RaffleApp" */;
+			buildConfigurationList = 0882F02F26618ED90070EF3F /* Build configuration list for PBXNativeTarget "RaffleApp" */;
 			buildPhases = (
-				0868028B2661642D005FF863 /* Sources */,
-				0868028C2661642D005FF863 /* Frameworks */,
-				0868028D2661642D005FF863 /* Resources */,
+				0882F01726618ED80070EF3F /* Sources */,
+				0882F01826618ED80070EF3F /* Frameworks */,
+				0882F01926618ED80070EF3F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -145,68 +116,46 @@
 			);
 			name = RaffleApp;
 			productName = RaffleApp;
-			productReference = 0868028F2661642D005FF863 /* RaffleApp.app */;
+			productReference = 0882F01B26618ED80070EF3F /* RaffleApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		086802A426616431005FF863 /* RaffleAppTests */ = {
+		0882F03526618EF00070EF3F /* RaffleAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 086802BC26616431005FF863 /* Build configuration list for PBXNativeTarget "RaffleAppTests" */;
+			buildConfigurationList = 0882F03D26618EF00070EF3F /* Build configuration list for PBXNativeTarget "RaffleAppTests" */;
 			buildPhases = (
-				086802A126616431005FF863 /* Sources */,
-				086802A226616431005FF863 /* Frameworks */,
-				086802A326616431005FF863 /* Resources */,
+				0882F03226618EF00070EF3F /* Sources */,
+				0882F03326618EF00070EF3F /* Frameworks */,
+				0882F03426618EF00070EF3F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				086802A726616431005FF863 /* PBXTargetDependency */,
+				0882F03C26618EF00070EF3F /* PBXTargetDependency */,
 			);
 			name = RaffleAppTests;
 			productName = RaffleAppTests;
-			productReference = 086802A526616431005FF863 /* RaffleAppTests.xctest */;
+			productReference = 0882F03626618EF00070EF3F /* RaffleAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		086802AF26616431005FF863 /* RaffleAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 086802BF26616431005FF863 /* Build configuration list for PBXNativeTarget "RaffleAppUITests" */;
-			buildPhases = (
-				086802AC26616431005FF863 /* Sources */,
-				086802AD26616431005FF863 /* Frameworks */,
-				086802AE26616431005FF863 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				086802B226616431005FF863 /* PBXTargetDependency */,
-			);
-			name = RaffleAppUITests;
-			productName = RaffleAppUITests;
-			productReference = 086802B026616431005FF863 /* RaffleAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		086802872661642D005FF863 /* Project object */ = {
+		0882F01326618ED80070EF3F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
-					0868028E2661642D005FF863 = {
+					0882F01A26618ED80070EF3F = {
 						CreatedOnToolsVersion = 12.5;
 					};
-					086802A426616431005FF863 = {
+					0882F03526618EF00070EF3F = {
 						CreatedOnToolsVersion = 12.5;
-						TestTargetID = 0868028E2661642D005FF863;
-					};
-					086802AF26616431005FF863 = {
-						CreatedOnToolsVersion = 12.5;
-						TestTargetID = 0868028E2661642D005FF863;
+						TestTargetID = 0882F01A26618ED80070EF3F;
 					};
 				};
 			};
-			buildConfigurationList = 0868028A2661642D005FF863 /* Build configuration list for PBXProject "RaffleApp" */;
+			buildConfigurationList = 0882F01626618ED80070EF3F /* Build configuration list for PBXProject "RaffleApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -214,37 +163,29 @@
 				en,
 				Base,
 			);
-			mainGroup = 086802862661642D005FF863;
-			productRefGroup = 086802902661642D005FF863 /* Products */;
+			mainGroup = 0882F01226618ED80070EF3F;
+			productRefGroup = 0882F01C26618ED80070EF3F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0868028E2661642D005FF863 /* RaffleApp */,
-				086802A426616431005FF863 /* RaffleAppTests */,
-				086802AF26616431005FF863 /* RaffleAppUITests */,
+				0882F01A26618ED80070EF3F /* RaffleApp */,
+				0882F03526618EF00070EF3F /* RaffleAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0868028D2661642D005FF863 /* Resources */ = {
+		0882F01926618ED80070EF3F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0868029F26616430005FF863 /* LaunchScreen.storyboard in Resources */,
-				0868029C26616430005FF863 /* Assets.xcassets in Resources */,
-				0868029A2661642D005FF863 /* Main.storyboard in Resources */,
+				0882F02B26618ED90070EF3F /* LaunchScreen.storyboard in Resources */,
+				0882F02826618ED90070EF3F /* Assets.xcassets in Resources */,
+				0882F02626618ED80070EF3F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		086802A326616431005FF863 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		086802AE26616431005FF863 /* Resources */ = {
+		0882F03426618EF00070EF3F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -254,60 +195,47 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0868028B2661642D005FF863 /* Sources */ = {
+		0882F01726618ED80070EF3F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				086802972661642D005FF863 /* ViewController.swift in Sources */,
-				086802932661642D005FF863 /* AppDelegate.swift in Sources */,
-				086802952661642D005FF863 /* SceneDelegate.swift in Sources */,
+				0882F02326618ED80070EF3F /* ViewController.swift in Sources */,
+				0882F01F26618ED80070EF3F /* AppDelegate.swift in Sources */,
+				0882F02126618ED80070EF3F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		086802A126616431005FF863 /* Sources */ = {
+		0882F03226618EF00070EF3F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				086802AA26616431005FF863 /* RaffleAppTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		086802AC26616431005FF863 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				086802B526616431005FF863 /* RaffleAppUITests.swift in Sources */,
+				0882F03926618EF00070EF3F /* RaffleAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		086802A726616431005FF863 /* PBXTargetDependency */ = {
+		0882F03C26618EF00070EF3F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0868028E2661642D005FF863 /* RaffleApp */;
-			targetProxy = 086802A626616431005FF863 /* PBXContainerItemProxy */;
-		};
-		086802B226616431005FF863 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0868028E2661642D005FF863 /* RaffleApp */;
-			targetProxy = 086802B126616431005FF863 /* PBXContainerItemProxy */;
+			target = 0882F01A26618ED80070EF3F /* RaffleApp */;
+			targetProxy = 0882F03B26618EF00070EF3F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		086802982661642D005FF863 /* Main.storyboard */ = {
+		0882F02426618ED80070EF3F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				086802992661642D005FF863 /* Base */,
+				0882F02526618ED80070EF3F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		0868029D26616430005FF863 /* LaunchScreen.storyboard */ = {
+		0882F02926618ED90070EF3F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0868029E26616430005FF863 /* Base */,
+				0882F02A26618ED90070EF3F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -315,7 +243,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		086802B726616431005FF863 /* Debug */ = {
+		0882F02D26618ED90070EF3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -376,7 +304,7 @@
 			};
 			name = Debug;
 		};
-		086802B826616431005FF863 /* Release */ = {
+		0882F02E26618ED90070EF3F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -431,7 +359,7 @@
 			};
 			name = Release;
 		};
-		086802BA26616431005FF863 /* Debug */ = {
+		0882F03026618ED90070EF3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -450,7 +378,7 @@
 			};
 			name = Debug;
 		};
-		086802BB26616431005FF863 /* Release */ = {
+		0882F03126618ED90070EF3F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -469,15 +397,13 @@
 			};
 			name = Release;
 		};
-		086802BD26616431005FF863 /* Debug */ = {
+		0882F03E26618EF00070EF3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 453FAV4WWW;
 				INFOPLIST_FILE = RaffleAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -491,15 +417,13 @@
 			};
 			name = Debug;
 		};
-		086802BE26616431005FF863 /* Release */ = {
+		0882F03F26618EF00070EF3F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 453FAV4WWW;
 				INFOPLIST_FILE = RaffleAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -510,89 +434,40 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaffleApp.app/RaffleApp";
-			};
-			name = Release;
-		};
-		086802C026616431005FF863 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 453FAV4WWW;
-				INFOPLIST_FILE = RaffleAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.code-isekai.RaffleAppUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RaffleApp;
-			};
-			name = Debug;
-		};
-		086802C126616431005FF863 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 453FAV4WWW;
-				INFOPLIST_FILE = RaffleAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.code-isekai.RaffleAppUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RaffleApp;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0868028A2661642D005FF863 /* Build configuration list for PBXProject "RaffleApp" */ = {
+		0882F01626618ED80070EF3F /* Build configuration list for PBXProject "RaffleApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				086802B726616431005FF863 /* Debug */,
-				086802B826616431005FF863 /* Release */,
+				0882F02D26618ED90070EF3F /* Debug */,
+				0882F02E26618ED90070EF3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		086802B926616431005FF863 /* Build configuration list for PBXNativeTarget "RaffleApp" */ = {
+		0882F02F26618ED90070EF3F /* Build configuration list for PBXNativeTarget "RaffleApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				086802BA26616431005FF863 /* Debug */,
-				086802BB26616431005FF863 /* Release */,
+				0882F03026618ED90070EF3F /* Debug */,
+				0882F03126618ED90070EF3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		086802BC26616431005FF863 /* Build configuration list for PBXNativeTarget "RaffleAppTests" */ = {
+		0882F03D26618EF00070EF3F /* Build configuration list for PBXNativeTarget "RaffleAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				086802BD26616431005FF863 /* Debug */,
-				086802BE26616431005FF863 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		086802BF26616431005FF863 /* Build configuration list for PBXNativeTarget "RaffleAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				086802C026616431005FF863 /* Debug */,
-				086802C126616431005FF863 /* Release */,
+				0882F03E26618EF00070EF3F /* Debug */,
+				0882F03F26618EF00070EF3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 086802872661642D005FF863 /* Project object */;
+	rootObject = 0882F01326618ED80070EF3F /* Project object */;
 }

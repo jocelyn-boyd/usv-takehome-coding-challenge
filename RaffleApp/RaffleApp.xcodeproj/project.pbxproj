@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		0882F01F26618ED80070EF3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F01E26618ED80070EF3F /* AppDelegate.swift */; };
 		0882F02126618ED80070EF3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F02026618ED80070EF3F /* SceneDelegate.swift */; };
-		0882F02326618ED80070EF3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F02226618ED80070EF3F /* ViewController.swift */; };
+		0882F02326618ED80070EF3F /* AllRafflesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F02226618ED80070EF3F /* AllRafflesViewController.swift */; };
 		0882F02626618ED80070EF3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0882F02426618ED80070EF3F /* Main.storyboard */; };
 		0882F02826618ED90070EF3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0882F02726618ED90070EF3F /* Assets.xcassets */; };
 		0882F02B26618ED90070EF3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0882F02926618ED90070EF3F /* LaunchScreen.storyboard */; };
 		0882F03926618EF00070EF3F /* RaffleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F03826618EF00070EF3F /* RaffleAppTests.swift */; };
-		0882F0432661ABE30070EF3F /* NewRaffleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F0422661ABE30070EF3F /* NewRaffleCell.swift */; };
-		0882F0472661B6530070EF3F /* AllRafflesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F0462661B6530070EF3F /* AllRafflesCell.swift */; };
+		0882F0492661B8930070EF3F /* Raffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F0482661B8930070EF3F /* Raffle.swift */; };
+		0882F04D2662A8AE0070EF3F /* CreateRaffleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F04C2662A8AE0070EF3F /* CreateRaffleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +32,7 @@
 		0882F01B26618ED80070EF3F /* RaffleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaffleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0882F01E26618ED80070EF3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0882F02026618ED80070EF3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0882F02226618ED80070EF3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0882F02226618ED80070EF3F /* AllRafflesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRafflesViewController.swift; sourceTree = "<group>"; };
 		0882F02526618ED80070EF3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0882F02726618ED90070EF3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0882F02A26618ED90070EF3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,8 +40,8 @@
 		0882F03626618EF00070EF3F /* RaffleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaffleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0882F03826618EF00070EF3F /* RaffleAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleAppTests.swift; sourceTree = "<group>"; };
 		0882F03A26618EF00070EF3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0882F0422661ABE30070EF3F /* NewRaffleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRaffleCell.swift; sourceTree = "<group>"; };
-		0882F0462661B6530070EF3F /* AllRafflesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRafflesCell.swift; sourceTree = "<group>"; };
+		0882F0482661B8930070EF3F /* Raffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Raffle.swift; sourceTree = "<group>"; };
+		0882F04C2662A8AE0070EF3F /* CreateRaffleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRaffleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,13 +85,13 @@
 			children = (
 				0882F01E26618ED80070EF3F /* AppDelegate.swift */,
 				0882F02026618ED80070EF3F /* SceneDelegate.swift */,
-				0882F02226618ED80070EF3F /* ViewController.swift */,
+				0882F02226618ED80070EF3F /* AllRafflesViewController.swift */,
+				0882F04C2662A8AE0070EF3F /* CreateRaffleViewController.swift */,
 				0882F02426618ED80070EF3F /* Main.storyboard */,
 				0882F02726618ED90070EF3F /* Assets.xcassets */,
 				0882F02926618ED90070EF3F /* LaunchScreen.storyboard */,
 				0882F02C26618ED90070EF3F /* Info.plist */,
-				0882F0422661ABE30070EF3F /* NewRaffleCell.swift */,
-				0882F0462661B6530070EF3F /* AllRafflesCell.swift */,
+				0882F0482661B8930070EF3F /* Raffle.swift */,
 			);
 			path = RaffleApp;
 			sourceTree = "<group>";
@@ -205,10 +205,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0882F0432661ABE30070EF3F /* NewRaffleCell.swift in Sources */,
-				0882F0472661B6530070EF3F /* AllRafflesCell.swift in Sources */,
-				0882F02326618ED80070EF3F /* ViewController.swift in Sources */,
+				0882F0492661B8930070EF3F /* Raffle.swift in Sources */,
+				0882F02326618ED80070EF3F /* AllRafflesViewController.swift in Sources */,
 				0882F01F26618ED80070EF3F /* AppDelegate.swift in Sources */,
+				0882F04D2662A8AE0070EF3F /* CreateRaffleViewController.swift in Sources */,
 				0882F02126618ED80070EF3F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,7 +382,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.code-isekai.RaffleApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -401,7 +401,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.code-isekai.RaffleApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

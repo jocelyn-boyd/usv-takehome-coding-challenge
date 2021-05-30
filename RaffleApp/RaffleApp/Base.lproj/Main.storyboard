@@ -253,7 +253,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hxe-8B-Mwz"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dSC-H1-VPB" firstAttribute="centerY" secondItem="Hxe-8B-Mwz" secondAttribute="centerY" id="46e-wC-gsF"/>
                             <constraint firstItem="dSC-H1-VPB" firstAttribute="height" secondItem="LDl-oJ-ftd" secondAttribute="height" multiplier="0.4" id="9TN-SE-lb5"/>

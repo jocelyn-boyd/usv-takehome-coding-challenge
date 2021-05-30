@@ -21,6 +21,7 @@
 		0882F0532662EC4C0070EF3F /* ParticipantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F0522662EC4C0070EF3F /* ParticipantListViewController.swift */; };
 		0882F05A2663068A0070EF3F /* PickWinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F0592663068A0070EF3F /* PickWinnerViewController.swift */; };
 		0882F05C266306A80070EF3F /* RegisterParticipantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F05B266306A80070EF3F /* RegisterParticipantViewController.swift */; };
+		0882F05E266327BE0070EF3F /* RaffleWinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F05D266327BE0070EF3F /* RaffleWinnerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		0882F0522662EC4C0070EF3F /* ParticipantListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantListViewController.swift; sourceTree = "<group>"; };
 		0882F0592663068A0070EF3F /* PickWinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickWinnerViewController.swift; sourceTree = "<group>"; };
 		0882F05B266306A80070EF3F /* RegisterParticipantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterParticipantViewController.swift; sourceTree = "<group>"; };
+		0882F05D266327BE0070EF3F /* RaffleWinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleWinnerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				0882F0522662EC4C0070EF3F /* ParticipantListViewController.swift */,
 				0882F0592663068A0070EF3F /* PickWinnerViewController.swift */,
 				0882F05B266306A80070EF3F /* RegisterParticipantViewController.swift */,
+				0882F05D266327BE0070EF3F /* RaffleWinnerViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0882F05E266327BE0070EF3F /* RaffleWinnerViewController.swift in Sources */,
 				0882F0532662EC4C0070EF3F /* ParticipantListViewController.swift in Sources */,
 				0882F0512662EB400070EF3F /* ParticipantCell.swift in Sources */,
 				0882F0492661B8930070EF3F /* Raffle.swift in Sources */,

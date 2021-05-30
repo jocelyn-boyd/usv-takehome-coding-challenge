@@ -11,29 +11,54 @@ class AllRafflesViewController: UIViewController {
 	
 	@IBOutlet private var allRafflesTableView: UITableView!
 	
+	var raffles = [Raffle]() {
+		didSet {
+			allRafflesTableView.reloadData()
+		}
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
+		configureTableView()
+		loadData()
+	}
+	
+	private func configureTableView() {
 		allRafflesTableView.delegate = self
 		allRafflesTableView.dataSource = self
+	}
+	
+	private func loadData() {
+		guard let pathToData = Bundle.main.path(forResource: "AllRafflesSample", ofType: "json") else {
+			fatalError("AllRafflesSample.json file not found")
+		}
+		let internalUrl = URL(fileURLWithPath: pathToData)
+		do {
+			let data = try Data(contentsOf: internalUrl)
+			let rafflesFromJSON = try Raffle.getAllRaffles(from: data)
+			raffles = rafflesFromJSON
+		}
+		catch {
+			print(error)
+		}
 	}
 	
 }
 
 extension AllRafflesViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		4
+		return raffles.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "RaffleCell", for: indexPath) as? RaffleCell else { return UITableViewCell() }
-		cell.raffleTitleLabel.text = "Raffle Name"
-		cell.dateCreatedLabel.text = "Date Created: \(Date())"
-		cell.winnerIdLabel.text = "Winner Id: \(Int.random(in: 1...100))"
-		cell.dateOfRaffleLabel.text = "Winner picked: \(Date())"
+		let raffle = raffles[indexPath.row]
+		cell.raffleTitleLabel.text = raffle.name
+		cell.dateCreatedLabel.text = "Created: \(String(describing: raffle.dateCreated))"
+		cell.winnerIdLabel.text = raffle.winnerId != nil ? "Winner Id: \(Int.random(in: 1...100)) 🎉" : "No winner yet!"
+		cell.dateOfRaffleLabel.text = raffle.raffledAt != nil ? "Closed: \(String(describing: raffle.dateRaffled!))" : "Click on raffle to register!"
 		return cell
 	}
-	
-	
 }
 

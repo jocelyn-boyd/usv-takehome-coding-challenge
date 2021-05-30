@@ -9,6 +9,7 @@ import UIKit
 
 class RaffleCell: UITableViewCell {
 	
+	@IBOutlet weak var raffleView: UIView!
 	@IBOutlet weak var raffleTitleLabel: UILabel!
 	@IBOutlet weak var dateCreatedLabel: UILabel!
 	@IBOutlet weak var winnerIdLabel: UILabel!

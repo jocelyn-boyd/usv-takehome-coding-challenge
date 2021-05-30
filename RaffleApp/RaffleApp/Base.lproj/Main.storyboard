@@ -128,6 +128,7 @@
                                             <outlet property="dateCreatedLabel" destination="t1E-Mn-eHs" id="K0W-L6-zJE"/>
                                             <outlet property="dateOfRaffleLabel" destination="mB8-hd-h5Y" id="bDC-Mz-CvF"/>
                                             <outlet property="raffleTitleLabel" destination="Uif-LF-EyQ" id="oBb-pC-ZJ1"/>
+                                            <outlet property="raffleView" destination="T3a-mX-cyy" id="Qt7-Vk-Dw7"/>
                                             <outlet property="winnerIdLabel" destination="MbW-rd-ORE" id="bPL-UF-2FT"/>
                                             <segue destination="1pZ-wz-Fd3" kind="show" id="prl-sg-ovP"/>
                                         </connections>

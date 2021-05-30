@@ -1,0 +1,373 @@
+[
+		{
+				"id": 8,
+				"name": "My first Raffle",
+				"created_at": "2021-05-28T14:50:27.189Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 9,
+				"name": "My first Raffle",
+				"created_at": "2021-05-28T14:50:42.986Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 19,
+				"name": "My first Raffle",
+				"created_at": "2021-05-28T18:23:58.072Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 21,
+				"name": "My first Raffle",
+				"created_at": "2021-05-28T19:04:47.780Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 31,
+				"name": "name",
+				"created_at": "2021-05-28T19:28:35.492Z",
+				"raffled_at": "2021-05-28T19:30:03.020Z",
+				"winner_id": 27
+		},
+		{
+				"id": 15,
+				"name": "Raffle GK",
+				"created_at": "2021-05-28T16:42:48.254Z",
+				"raffled_at": "2021-05-28T19:53:29.348Z",
+				"winner_id": 36
+		},
+		{
+				"id": 35,
+				"name": "Simpsons DVD Box Set",
+				"created_at": "2021-05-28T19:41:40.891Z",
+				"raffled_at": "2021-05-28T20:13:41.124Z",
+				"winner_id": 37
+		},
+		{
+				"id": 36,
+				"name": "GK Test",
+				"created_at": "2021-05-28T20:17:35.898Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 39,
+				"name": "Win a bike",
+				"created_at": "2021-05-28T21:41:37.204Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 3,
+				"name": "Jovanny's raffle",
+				"created_at": "2021-05-23T00:02:46.811Z",
+				"raffled_at": "2021-05-23T00:05:01.603Z",
+				"winner_id": 11
+		},
+		{
+				"id": 1,
+				"name": "Sample Raffle",
+				"created_at": "2021-05-22T23:59:27.260Z",
+				"raffled_at": "2021-05-24T05:33:55.304Z",
+				"winner_id": 5
+		},
+		{
+				"id": 40,
+				"name": "Kaycee's raffle",
+				"created_at": "2021-05-28T21:43:48.228Z",
+				"raffled_at": "2021-05-28T21:44:08.657Z",
+				"winner_id": 42
+		},
+		{
+				"id": 34,
+				"name": "test raffel ",
+				"created_at": "2021-05-28T19:31:10.074Z",
+				"raffled_at": "2021-05-28T21:45:47.239Z",
+				"winner_id": 31
+		},
+		{
+				"id": 38,
+				"name": "Knicks Tix Raffle",
+				"created_at": "2021-05-28T21:37:19.316Z",
+				"raffled_at": "2021-05-28T21:46:05.697Z",
+				"winner_id": 40
+		},
+		{
+				"id": 41,
+				"name": "Win a bike",
+				"created_at": "2021-05-28T21:57:15.742Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 47,
+				"name": "Did you figure it out",
+				"created_at": "2021-05-29T00:25:40.274Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 48,
+				"name": "New raffle!",
+				"created_at": "2021-05-29T01:23:49.329Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 46,
+				"name": "Did you figure it out",
+				"created_at": "2021-05-29T00:21:21.206Z",
+				"raffled_at": "2021-05-29T01:57:38.877Z",
+				"winner_id": 47
+		},
+		{
+				"id": 53,
+				"name": "Money",
+				"created_at": "2021-05-29T02:53:26.036Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 50,
+				"name": "Jackpot",
+				"created_at": "2021-05-29T02:35:40.194Z",
+				"raffled_at": "2021-05-29T06:00:26.775Z",
+				"winner_id": 57
+		},
+		{
+				"id": 51,
+				"name": "Money",
+				"created_at": "2021-05-29T02:41:28.531Z",
+				"raffled_at": "2021-05-29T06:24:32.620Z",
+				"winner_id": 79
+		},
+		{
+				"id": 52,
+				"name": "Money",
+				"created_at": "2021-05-29T02:42:04.998Z",
+				"raffled_at": "2021-05-29T06:36:51.212Z",
+				"winner_id": 90
+		},
+		{
+				"id": 37,
+				"name": "GK Test raffle",
+				"created_at": "2021-05-28T20:18:09.910Z",
+				"raffled_at": "2021-05-29T12:37:56.030Z",
+				"winner_id": 94
+		},
+		{
+				"id": 55,
+				"name": "My first Raffle",
+				"created_at": "2021-05-29T15:52:48.490Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 56,
+				"name": "My first Raffle",
+				"created_at": "2021-05-29T15:54:14.320Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 57,
+				"name": "My first Raffle",
+				"created_at": "2021-05-29T15:55:14.016Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 54,
+				"name": "Honey",
+				"created_at": "2021-05-29T02:54:29.426Z",
+				"raffled_at": "2021-05-29T15:58:54.076Z",
+				"winner_id": 96
+		},
+		{
+				"id": 58,
+				"name": "New Raffle",
+				"created_at": "2021-05-29T16:03:19.063Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 4,
+				"name": "Cali's raffle",
+				"created_at": "2021-05-23T00:05:58.622Z",
+				"raffled_at": "2021-05-29T16:14:35.595Z",
+				"winner_id": 26
+		},
+		{
+				"id": 60,
+				"name": "trains",
+				"created_at": "2021-05-29T16:28:11.115Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 61,
+				"name": "trains",
+				"created_at": "2021-05-29T16:28:23.960Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 62,
+				"name": "My first Raffle",
+				"created_at": "2021-05-29T17:07:55.928Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 63,
+				"name": "My first Raffle",
+				"created_at": "2021-05-29T17:18:33.388Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 64,
+				"name": "My first Raffle",
+				"created_at": "2021-05-29T17:43:28.428Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 66,
+				"name": "Yugiyoh cards",
+				"created_at": "2021-05-29T18:07:55.316Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 68,
+				"name": "Pokemon cards",
+				"created_at": "2021-05-29T18:20:03.654Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 73,
+				"name": "test",
+				"created_at": "2021-05-29T18:43:17.144Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 74,
+				"name": "test two",
+				"created_at": "2021-05-29T18:46:18.862Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 75,
+				"name": "dasfd",
+				"created_at": "2021-05-29T18:56:30.583Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 76,
+				"name": "trains",
+				"created_at": "2021-05-29T18:56:48.165Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 77,
+				"name": "My first Raffle",
+				"created_at": "2021-05-29T19:15:17.061Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 79,
+				"name": "My first Raffle",
+				"created_at": "2021-05-29T19:42:46.228Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 80,
+				"name": "Mai's raffle",
+				"created_at": "2021-05-29T19:43:03.090Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 81,
+				"name": "M1 mini raffle",
+				"created_at": "2021-05-29T19:49:14.115Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 78,
+				"name": "Macbook Raffle",
+				"created_at": "2021-05-29T19:37:33.421Z",
+				"raffled_at": "2021-05-29T21:01:06.571Z",
+				"winner_id": 107
+		},
+		{
+				"id": 84,
+				"name": "ticket",
+				"created_at": "2021-05-29T21:06:54.202Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 86,
+				"name": "New Raffle",
+				"created_at": "2021-05-29T22:20:46.781Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 85,
+				"name": "Puppy Dog Raffle",
+				"created_at": "2021-05-29T22:01:20.310Z",
+				"raffled_at": "2021-05-29T22:46:34.569Z",
+				"winner_id": 116
+		},
+		{
+				"id": 87,
+				"name": "XCTestRaffle",
+				"created_at": "2021-05-30T02:38:31.232Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 59,
+				"name": "XCTestRaffle",
+				"created_at": "2021-05-29T16:15:15.287Z",
+				"raffled_at": "2021-05-30T02:38:31.423Z",
+				"winner_id": 117
+		},
+		{
+				"id": 88,
+				"name": "League Of Legends",
+				"created_at": "2021-05-30T02:45:59.159Z",
+				"raffled_at": "2021-05-30T03:05:00.814Z",
+				"winner_id": 126
+		},
+		{
+				"id": 89,
+				"name": "100 Doge Coins",
+				"created_at": "2021-05-30T03:09:17.677Z",
+				"raffled_at": null,
+				"winner_id": null
+		},
+		{
+				"id": 90,
+				"name": "100 Doge Coins",
+				"created_at": "2021-05-30T03:10:04.081Z",
+				"raffled_at": "2021-05-30T03:58:16.145Z",
+				"winner_id": 140
+		}
+]

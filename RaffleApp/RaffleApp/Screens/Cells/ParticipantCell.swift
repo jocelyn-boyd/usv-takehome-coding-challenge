@@ -12,7 +12,7 @@ class ParticipantCell: UITableViewCell {
 	@IBOutlet weak var participantNameLabel: UILabel!
 	@IBOutlet weak var participantIdLabel: UILabel!
 	@IBOutlet weak var participantEmailLabel: UILabel!
-	@IBOutlet weak var participantPhoneNumberLabel: UIStackView!
+	@IBOutlet weak var participantPhoneNumberLabel: UILabel!
 	
 	override func awakeFromNib() {
         super.awakeFromNib()

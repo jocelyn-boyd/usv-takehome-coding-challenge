@@ -32,11 +32,15 @@ class ParticipantListViewController: UIViewController {
 
 extension ParticipantListViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		5
+		4
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "ParticipantCell", for: indexPath) as? ParticipantCell else { return UITableViewCell() }
+		cell.participantNameLabel.text = "Participant Name"
+		cell.participantIdLabel.text = "Participant ID: \(indexPath.row + 1)"
+		cell.participantEmailLabel.text = "jocelynboyd@email.com"
+		cell.participantPhoneNumberLabel.text = "123-456-7890"
 		return cell
 	}
 	

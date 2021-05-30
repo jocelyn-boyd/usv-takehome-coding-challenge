@@ -168,38 +168,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dSC-H1-VPB">
-                                <rect key="frame" x="19.666666666666657" y="220" width="351" height="316"/>
+                                <rect key="frame" x="19.666666666666657" y="180.66666666666663" width="351" height="395"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="dTY-Jz-gZP">
-                                        <rect key="frame" x="17.333333333333343" y="15.666666666666657" width="316" height="284.66666666666674"/>
+                                        <rect key="frame" x="17.333333333333343" y="19.666666666666686" width="316" height="355.33333333333331"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PPR-Hr-yEM">
-                                                <rect key="frame" x="0.0" y="0.0" width="316" height="236.66666666666666"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="316" height="307.33333333333331"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Raffle Name*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbO-hQ-DRv">
-                                                        <rect key="frame" x="0.0" y="0.0" width="316" height="23.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="316" height="30.666666666666668"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Zs-Yb-JG2">
-                                                        <rect key="frame" x="0.0" y="31.666666666666654" width="316" height="35.666666666666657"/>
+                                                        <rect key="frame" x="0.0" y="38.666666666666657" width="316" height="46"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Secret Token*" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfG-Fr-idq">
-                                                        <rect key="frame" x="0.0" y="75.333333333333343" width="316" height="23.666666666666671"/>
+                                                        <rect key="frame" x="0.0" y="92.666666666666657" width="316" height="31"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HPr-tv-6jr">
-                                                        <rect key="frame" x="0.0" y="107.00000000000003" width="316" height="35.333333333333343"/>
+                                                        <rect key="frame" x="0.0" y="131.66666666666666" width="316" height="46"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mP2-QR-YOM">
-                                                        <rect key="frame" x="0.0" y="150.33333333333334" width="316" height="45"/>
+                                                        <rect key="frame" x="0.0" y="185.66666666666666" width="316" height="45"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="S8e-ri-GiI"/>
@@ -210,9 +210,10 @@
                                                             <action selector="generateSecretToken:" destination="9pS-bW-ClH" eventType="touchUpInside" id="VcP-F4-cOb"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="You must remember the secret token because it will be asked when picking a winner." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXW-lW-YSM">
-                                                        <rect key="frame" x="0.0" y="203.33333333333334" width="316" height="33.333333333333343"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXW-lW-YSM">
+                                                        <rect key="frame" x="0.0" y="238.66666666666666" width="316" height="68.666666666666657"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <string key="text">You must remember the secret token because it will be asked when picking a winner. Create your own token or randomly generate one!</string>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -226,7 +227,7 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grI-8V-aPa">
-                                                <rect key="frame" x="0.0" y="239.66666666666663" width="316" height="45"/>
+                                                <rect key="frame" x="0.0" y="310.33333333333337" width="316" height="45"/>
                                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="sSO-fR-tu9"/>
@@ -256,7 +257,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dSC-H1-VPB" firstAttribute="centerY" secondItem="Hxe-8B-Mwz" secondAttribute="centerY" id="46e-wC-gsF"/>
-                            <constraint firstItem="dSC-H1-VPB" firstAttribute="height" secondItem="LDl-oJ-ftd" secondAttribute="height" multiplier="0.4" id="9TN-SE-lb5"/>
+                            <constraint firstItem="dSC-H1-VPB" firstAttribute="height" secondItem="LDl-oJ-ftd" secondAttribute="height" multiplier="0.5" id="9TN-SE-lb5"/>
                             <constraint firstItem="dSC-H1-VPB" firstAttribute="width" secondItem="LDl-oJ-ftd" secondAttribute="width" multiplier="0.9" id="Vyf-zo-v0T"/>
                             <constraint firstItem="dSC-H1-VPB" firstAttribute="centerX" secondItem="Hxe-8B-Mwz" secondAttribute="centerX" id="fU0-SY-JzG"/>
                         </constraints>
@@ -279,8 +280,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1HQ-eH-NRX" userLabel="Button Stack View">
+                                <rect key="frame" x="25" y="735" width="340" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1h-qi-G95">
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <state key="normal" title="Register">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="registerParticipantButton:" destination="1pZ-wz-Fd3" eventType="touchUpInside" id="KvU-wr-53c"/>
+                                            <segue destination="tHJ-TR-7n8" kind="presentation" id="Ec3-3r-b4L"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqT-P3-V54">
+                                        <rect key="frame" x="170" y="0.0" width="170" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <state key="normal" title="Pick a Winner">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pickAWinnerButton:" destination="1pZ-wz-Fd3" eventType="touchUpInside" id="X3L-tU-BJF"/>
+                                            <segue destination="wVH-3g-arg" kind="presentation" id="V84-gG-VdM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="LSp-m3-89B"/>
+                                </constraints>
+                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NAM-l0-tMq">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="730"/>
+                                <rect key="frame" x="0.0" y="140" width="390" height="570"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ParticipantCell" id="oG0-g0-uOY" customClass="ParticipantCell" customModule="RaffleApp" customModuleProvider="target">
@@ -295,6 +326,7 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TdV-nT-mKg">
                                                             <rect key="frame" x="0.0" y="0.0" width="58.333333333333336" height="106.66666666666667"/>
+                                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="5"/>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="buO-ri-VkK" userLabel="Participant Stack View">
@@ -306,19 +338,20 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9HT-aK-lZq">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9HT-aK-lZq">
                                                                     <rect key="frame" x="0.0" y="30" width="292.66666666666669" height="77"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ACo-1t-Rl7" userLabel="Number Stack View">
                                                                             <rect key="frame" x="0.0" y="0.0" width="292.66666666666669" height="20.333333333333332"/>
                                                                             <subviews>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JIx-h4-AKk">
-                                                                                    <rect key="frame" x="0.0" y="0.33333333333333393" width="14" height="18.999999999999993"/>
+                                                                                    <rect key="frame" x="0.0" y="1.3333333333333321" width="20.666666666666668" height="18"/>
+                                                                                    <color key="tintColor" systemColor="systemGrayColor"/>
                                                                                     <imageReference key="image" image="number" catalog="system" symbolScale="small"/>
-                                                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="5" scale="small"/>
+                                                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="8" scale="small"/>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participant Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJI-xe-8EH">
-                                                                                    <rect key="frame" x="22" y="0.0" width="270.66666666666669" height="20.333333333333332"/>
+                                                                                    <rect key="frame" x="28.666666666666686" y="0.0" width="264" height="20.333333333333332"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
@@ -329,11 +362,12 @@
                                                                             <rect key="frame" x="0.0" y="28.333333333333329" width="292.66666666666669" height="20.333333333333329"/>
                                                                             <subviews>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="u37-5f-kuX">
-                                                                                    <rect key="frame" x="0.0" y="0.33333333333333393" width="11.666666666666666" height="19.666666666666664"/>
-                                                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="5"/>
+                                                                                    <rect key="frame" x="0.0" y="0.33333333333333393" width="17.666666666666668" height="19.333333333333329"/>
+                                                                                    <color key="tintColor" systemColor="systemGrayColor"/>
+                                                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="8"/>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="participant@email.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="064-ti-raK">
-                                                                                    <rect key="frame" x="19.666666666666686" y="0.0" width="273" height="20.333333333333332"/>
+                                                                                    <rect key="frame" x="25.666666666666686" y="0.0" width="267" height="20.333333333333332"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
@@ -344,11 +378,13 @@
                                                                             <rect key="frame" x="0.0" y="56.666666666666679" width="292.66666666666669" height="20.333333333333336"/>
                                                                             <subviews>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yZr-Io-ehY">
-                                                                                    <rect key="frame" x="0.0" y="0.33333333333333393" width="13.666666666666666" height="19.666666666666664"/>
-                                                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="5"/>
+                                                                                    <rect key="frame" x="0.0" y="0.66666666666666607" width="20.666666666666668" height="19.333333333333332"/>
+                                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    <color key="tintColor" systemColor="systemGrayColor"/>
+                                                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="8"/>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(555) 123-4567" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4M-hg-Kde">
-                                                                                    <rect key="frame" x="21.666666666666686" y="0.0" width="271" height="20.333333333333332"/>
+                                                                                    <rect key="frame" x="28.666666666666686" y="0.0" width="264" height="20.333333333333332"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
@@ -387,38 +423,11 @@
                                             <outlet property="participantEmailLabel" destination="064-ti-raK" id="htM-Lk-oNm"/>
                                             <outlet property="participantIdLabel" destination="vJI-xe-8EH" id="sPH-cw-05t"/>
                                             <outlet property="participantNameLabel" destination="cu1-BM-JdN" id="QD7-by-3Y5"/>
-                                            <outlet property="participantPhoneNumberLabel" destination="buO-ri-VkK" id="exF-tc-dsY"/>
+                                            <outlet property="participantPhoneNumberLabel" destination="N4M-hg-Kde" id="y5v-wf-JoC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1HQ-eH-NRX" userLabel="Button Stack View">
-                                <rect key="frame" x="25" y="755" width="340" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1h-qi-G95">
-                                        <rect key="frame" x="0.0" y="0.0" width="170" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                        <state key="normal" title="Register">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="registerParticipantButton:" destination="1pZ-wz-Fd3" eventType="touchUpInside" id="KvU-wr-53c"/>
-                                            <segue destination="tHJ-TR-7n8" kind="presentation" id="Ec3-3r-b4L"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqT-P3-V54">
-                                        <rect key="frame" x="170" y="0.0" width="170" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                        <state key="normal" title="Pick a Winner">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="pickAWinnerButton:" destination="1pZ-wz-Fd3" eventType="touchUpInside" id="X3L-tU-BJF"/>
-                                            <segue destination="wVH-3g-arg" kind="presentation" id="V84-gG-VdM"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PcJ-Wd-pDJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -428,18 +437,18 @@
                             <constraint firstItem="1HQ-eH-NRX" firstAttribute="leading" secondItem="PcJ-Wd-pDJ" secondAttribute="leading" constant="25" id="Mm3-d2-9HX"/>
                             <constraint firstItem="NAM-l0-tMq" firstAttribute="trailing" secondItem="PcJ-Wd-pDJ" secondAttribute="trailing" id="NUa-hN-bon"/>
                             <constraint firstItem="1HQ-eH-NRX" firstAttribute="top" secondItem="NAM-l0-tMq" secondAttribute="bottom" constant="25" id="eWM-KS-WxJ"/>
-                            <constraint firstItem="NAM-l0-tMq" firstAttribute="top" secondItem="85r-Nc-WEO" secondAttribute="top" id="iwm-ya-Gc3"/>
+                            <constraint firstItem="NAM-l0-tMq" firstAttribute="top" secondItem="85r-Nc-WEO" secondAttribute="top" constant="140" id="iwm-ya-Gc3"/>
                             <constraint firstItem="PcJ-Wd-pDJ" firstAttribute="bottom" secondItem="1HQ-eH-NRX" secondAttribute="bottom" constant="25" id="xs9-cA-ko9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Raffle Name" id="Dp8-o6-cR7"/>
+                    <navigationItem key="navigationItem" title="Raffle Name" largeTitleDisplayMode="always" id="Dp8-o6-cR7"/>
                     <connections>
                         <outlet property="participantTableView" destination="NAM-l0-tMq" id="L9u-Qs-FiP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ukB-NP-uQj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3040" y="373"/>
+            <point key="canvasLocation" x="3040" y="372.51184834123222"/>
         </scene>
         <!--Pick Winner View Controller-->
         <scene sceneID="hEj-Zo-nDR">
@@ -470,7 +479,7 @@
                                             <action selector="secretTokenTextField:" destination="4CZ-iX-fzc" eventType="editingDidEnd" id="tfs-ca-lsq"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the secret token provided when the raffle was created." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga3-dV-cpY">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the secret token entered when the raffle was created." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga3-dV-cpY">
                                         <rect key="frame" x="0.0" y="111.6666666666667" width="342" height="45.666666666666671"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                         <nil key="textColor"/>
@@ -633,16 +642,18 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axs-dW-kae">
                                                         <rect key="frame" x="0.0" y="0.0" width="154" height="44"/>
-                                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                        <state key="normal" title="Submit"/>
+                                                        <state key="normal" title="Submit">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="submitFormButton:" destination="tHJ-TR-7n8" eventType="touchUpInside" id="Sqj-9i-LXO"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdt-i4-TqJ">
                                                         <rect key="frame" x="162" y="0.0" width="154" height="44"/>
-                                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <state key="normal" title="Clear"/>
                                                         <connections>
@@ -732,11 +743,11 @@
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

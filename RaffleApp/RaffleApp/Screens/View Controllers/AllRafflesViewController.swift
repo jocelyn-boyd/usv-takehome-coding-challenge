@@ -22,12 +22,15 @@ class AllRafflesViewController: UIViewController {
 
 extension AllRafflesViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		5
+		4
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "RaffleCell", for: indexPath) as? RaffleCell else { return UITableViewCell() }
-		cell.raffleTitleLabel.text = "Raffle"
+		cell.raffleTitleLabel.text = "Raffle Name"
+		cell.dateCreatedLabel.text = "Date Created: \(Date())"
+		cell.winnerIdLabel.text = "Winner Id: \(Int.random(in: 1...100))"
+		cell.dateOfRaffleLabel.text = "Winner picked: \(Date())"
 		return cell
 	}
 	

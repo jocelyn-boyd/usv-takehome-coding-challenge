@@ -16,6 +16,11 @@
 		0882F03926618EF00070EF3F /* RaffleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F03826618EF00070EF3F /* RaffleAppTests.swift */; };
 		0882F0492661B8930070EF3F /* Raffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F0482661B8930070EF3F /* Raffle.swift */; };
 		0882F04D2662A8AE0070EF3F /* CreateRaffleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F04C2662A8AE0070EF3F /* CreateRaffleViewController.swift */; };
+		0882F04F2662AD940070EF3F /* RaffleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F04E2662AD940070EF3F /* RaffleCell.swift */; };
+		0882F0512662EB400070EF3F /* ParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F0502662EB400070EF3F /* ParticipantCell.swift */; };
+		0882F0532662EC4C0070EF3F /* ParticipantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F0522662EC4C0070EF3F /* ParticipantListViewController.swift */; };
+		0882F05A2663068A0070EF3F /* PickWinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F0592663068A0070EF3F /* PickWinnerViewController.swift */; };
+		0882F05C266306A80070EF3F /* RegisterParticipantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F05B266306A80070EF3F /* RegisterParticipantViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,11 @@
 		0882F03A26618EF00070EF3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0882F0482661B8930070EF3F /* Raffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Raffle.swift; sourceTree = "<group>"; };
 		0882F04C2662A8AE0070EF3F /* CreateRaffleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRaffleViewController.swift; sourceTree = "<group>"; };
+		0882F04E2662AD940070EF3F /* RaffleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleCell.swift; sourceTree = "<group>"; };
+		0882F0502662EB400070EF3F /* ParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantCell.swift; sourceTree = "<group>"; };
+		0882F0522662EC4C0070EF3F /* ParticipantListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantListViewController.swift; sourceTree = "<group>"; };
+		0882F0592663068A0070EF3F /* PickWinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickWinnerViewController.swift; sourceTree = "<group>"; };
+		0882F05B266306A80070EF3F /* RegisterParticipantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterParticipantViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,15 +93,11 @@
 		0882F01D26618ED80070EF3F /* RaffleApp */ = {
 			isa = PBXGroup;
 			children = (
-				0882F01E26618ED80070EF3F /* AppDelegate.swift */,
-				0882F02026618ED80070EF3F /* SceneDelegate.swift */,
-				0882F02226618ED80070EF3F /* AllRafflesViewController.swift */,
-				0882F04C2662A8AE0070EF3F /* CreateRaffleViewController.swift */,
+				0882F0552662FD880070EF3F /* Supporting Files */,
+				0882F0542662FD7E0070EF3F /* Screens */,
+				0882F0562662FDB70070EF3F /* Models */,
 				0882F02426618ED80070EF3F /* Main.storyboard */,
-				0882F02726618ED90070EF3F /* Assets.xcassets */,
-				0882F02926618ED90070EF3F /* LaunchScreen.storyboard */,
 				0882F02C26618ED90070EF3F /* Info.plist */,
-				0882F0482661B8930070EF3F /* Raffle.swift */,
 			);
 			path = RaffleApp;
 			sourceTree = "<group>";
@@ -103,6 +109,55 @@
 				0882F03A26618EF00070EF3F /* Info.plist */,
 			);
 			path = RaffleAppTests;
+			sourceTree = "<group>";
+		};
+		0882F0542662FD7E0070EF3F /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0882F0572662FDC50070EF3F /* Cells */,
+				0882F0582662FDD80070EF3F /* View Controllers */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		0882F0552662FD880070EF3F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0882F01E26618ED80070EF3F /* AppDelegate.swift */,
+				0882F02026618ED80070EF3F /* SceneDelegate.swift */,
+				0882F02926618ED90070EF3F /* LaunchScreen.storyboard */,
+				0882F02726618ED90070EF3F /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0882F0562662FDB70070EF3F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0882F0482661B8930070EF3F /* Raffle.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0882F0572662FDC50070EF3F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0882F04E2662AD940070EF3F /* RaffleCell.swift */,
+				0882F0502662EB400070EF3F /* ParticipantCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0882F0582662FDD80070EF3F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0882F02226618ED80070EF3F /* AllRafflesViewController.swift */,
+				0882F04C2662A8AE0070EF3F /* CreateRaffleViewController.swift */,
+				0882F0522662EC4C0070EF3F /* ParticipantListViewController.swift */,
+				0882F0592663068A0070EF3F /* PickWinnerViewController.swift */,
+				0882F05B266306A80070EF3F /* RegisterParticipantViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,9 +260,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0882F0532662EC4C0070EF3F /* ParticipantListViewController.swift in Sources */,
+				0882F0512662EB400070EF3F /* ParticipantCell.swift in Sources */,
 				0882F0492661B8930070EF3F /* Raffle.swift in Sources */,
 				0882F02326618ED80070EF3F /* AllRafflesViewController.swift in Sources */,
 				0882F01F26618ED80070EF3F /* AppDelegate.swift in Sources */,
+				0882F04F2662AD940070EF3F /* RaffleCell.swift in Sources */,
+				0882F05A2663068A0070EF3F /* PickWinnerViewController.swift in Sources */,
+				0882F05C266306A80070EF3F /* RegisterParticipantViewController.swift in Sources */,
 				0882F04D2662A8AE0070EF3F /* CreateRaffleViewController.swift in Sources */,
 				0882F02126618ED80070EF3F /* SceneDelegate.swift in Sources */,
 			);

@@ -269,8 +269,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Create A Raffle" largeTitleDisplayMode="never" id="hJt-jP-HaN"/>
                     <connections>
-                        <outlet property="raffleNameTextView" destination="3Zs-Yb-JG2" id="vxG-6v-trZ"/>
-                        <outlet property="secretTokenTextView" destination="HPr-tv-6jr" id="uMi-AA-zQw"/>
+                        <outlet property="postButton" destination="grI-8V-aPa" id="Txn-ON-wRQ"/>
+                        <outlet property="raffleNameTextField" destination="3Zs-Yb-JG2" id="vxG-6v-trZ"/>
+                        <outlet property="secretTokenTextField" destination="HPr-tv-6jr" id="uMi-AA-zQw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bR2-pJ-YS2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

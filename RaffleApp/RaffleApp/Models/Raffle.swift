@@ -12,9 +12,9 @@ enum JSONError: Error {
 }
 
 struct Raffle: Codable {
-	let id: Int
+	let id: Int?
 	let name: String
-	let createdAt: String
+	let createdAt: String?
 	let raffledAt: String?
 	let winnerId: Int?
 	
@@ -25,7 +25,7 @@ struct Raffle: Codable {
 		dateFormatter.locale = Locale(identifier: "en_US_POSIX")
 		dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
 
-		let date = dateFormatter.date(from: dateCreatedString)
+		let date = dateFormatter.date(from: dateCreatedString!)
 		
 		dateFormatter.dateStyle = .medium
 		dateFormatter.timeStyle = .short

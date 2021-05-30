@@ -21,29 +21,26 @@ class AllRafflesViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		configureTableView()
-		loadData()
+		loadAllRafflesData()
 	}
-	
+		
 	private func configureTableView() {
 		allRafflesTableView.delegate = self
 		allRafflesTableView.dataSource = self
 	}
 	
-	private func loadData() {
-		guard let pathToData = Bundle.main.path(forResource: "AllRafflesSample", ofType: "json") else {
-			fatalError("AllRafflesSample.json file not found")
-		}
-		let internalUrl = URL(fileURLWithPath: pathToData)
-		do {
-			let data = try Data(contentsOf: internalUrl)
-			let rafflesFromJSON = try Raffle.getAllRaffles(from: data)
-			raffles = rafflesFromJSON
-		}
-		catch {
-			print(error)
+	private func loadAllRafflesData() {
+		RaffleAPIClient.manager.getAllRaffles { result in
+			DispatchQueue.main.async { [weak self] in
+				switch result {
+				case let .success(raffles):
+					self?.raffles = raffles.sorted() { $0.dateCreated > $1.dateCreated }
+				case let .failure(error):
+					print(error.localizedDescription)
+				}
+			}
 		}
 	}
-	
 }
 
 extension AllRafflesViewController: UITableViewDelegate, UITableViewDataSource {

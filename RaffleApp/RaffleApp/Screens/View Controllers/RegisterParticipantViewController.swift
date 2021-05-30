@@ -9,7 +9,6 @@ import UIKit
 
 class RegisterParticipantViewController: UIViewController {
 	
-	
 	@IBOutlet weak var firstNameTextView: UITextField!
 	@IBOutlet weak var lastNameTextView: UITextField!
 	@IBOutlet weak var emailTextView: UITextField!
@@ -22,11 +21,11 @@ class RegisterParticipantViewController: UIViewController {
     }
 	
 	
-	@IBAction func submitFormButton(_ sender: UIButton) {
+	@IBAction private func submitFormButton(_ sender: UIButton) {
 		print("submit button pressed")
 	}
 	
-	@IBAction func clearFormButton(_ sender: UIButton) {
+	@IBAction private func clearFormButton(_ sender: UIButton) {
 		print("clear button pressed")
 	}
 }

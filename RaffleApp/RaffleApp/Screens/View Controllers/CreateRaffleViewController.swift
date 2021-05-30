@@ -17,11 +17,11 @@ class CreateRaffleViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-	@IBAction func generateSecretToken(_ sender: UIButton) {
+	@IBAction private func generateSecretToken(_ sender: UIButton) {
 		print("generate secret token button pressed")
 	}
 	
-	@IBAction func createNewRaffle(_ sender: UIButton) {
+	@IBAction private func createNewRaffle(_ sender: UIButton) {
 		print("create new raffle button pressed")
 	}
 

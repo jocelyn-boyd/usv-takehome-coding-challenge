@@ -18,7 +18,7 @@ class PickWinnerViewController: UIViewController {
     }
     
 
-	@IBAction func pickWinnerButton(_ sender: UIButton) {
+	@IBAction private func pickWinnerButton(_ sender: UIButton) {
 		print("winner button pressed")
 	}
 }

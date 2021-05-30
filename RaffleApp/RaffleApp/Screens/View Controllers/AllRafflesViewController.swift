@@ -9,7 +9,7 @@ import UIKit
 
 class AllRafflesViewController: UIViewController {
 	
-	@IBOutlet var allRafflesTableView: UITableView!
+	@IBOutlet private var allRafflesTableView: UITableView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()

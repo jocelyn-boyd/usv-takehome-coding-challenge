@@ -439,7 +439,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="drawWinnerButton:" destination="1pZ-wz-Fd3" eventType="touchUpInside" id="X3L-tU-BJF"/>
+                                            <action selector="drawWinnerButton:" destination="ukB-NP-uQj" eventType="touchUpInside" id="Rhg-rD-FUN"/>
                                             <segue destination="wVH-3g-arg" kind="presentation" identifier="drawWinnerSegue" id="V84-gG-VdM"/>
                                         </connections>
                                     </button>
@@ -520,8 +520,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="drawRaffleWinnerButton:" destination="wVH-3g-arg" eventType="touchUpInside" id="GGJ-i2-J06"/>
-                                            <action selector="pickRaffleWinnerButton:" destination="4CZ-iX-fzc" eventType="touchUpInside" id="dce-qK-QdK"/>
+                                            <action selector="drawRaffleWinnerButton:" destination="joi-E1-2fG" eventType="touchUpInside" id="1qD-hy-ew2"/>
                                         </connections>
                                     </button>
                                 </subviews>

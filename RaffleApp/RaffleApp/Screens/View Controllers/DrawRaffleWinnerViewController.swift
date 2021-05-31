@@ -44,7 +44,7 @@ class DrawRaffleWinnerViewController: UIViewController {
 		// if raffle details winner is nil, then draw random winner
 		// drawRaffleWinnerFromParticipants()
 		// if raffle details winner is NOT nil, then fetch raffle winner
-		// getRaffleWinner()
+		 getRaffleWinner()
 	}
 	
 	// MARK: - Private Methods

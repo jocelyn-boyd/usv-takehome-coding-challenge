@@ -12,6 +12,8 @@ class RaffleDetailViewController: UIViewController {
 	
 	@IBOutlet private var allParticipantsTableView: UITableView!
 	@IBOutlet weak var participantCountLabel: UILabel!
+	@IBOutlet weak var registrationButton: UIButton!
+	@IBOutlet weak var drawWinnerButton: UIButton!
 	
 	// MARK: - Internal Properties
 	
@@ -27,32 +29,28 @@ class RaffleDetailViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
-		configureViewController()
+		setTableViewDelegatesAndDataSource()
+		setNavigationTitleToRaffleName()
 		loadAllRaffleParticipants()
+		loadTotalNumberOfParticipants()
 	}
-	
-	// MARK: - IBActions
-	
-	@IBAction private func registerNewParticipantButton(_ sender: UIButton) {
-		//MARK: - TODO: raffle creator cannot register as a participant in their own raffle
-		// registerParticipantButton hidden to raffle creator
-	}
-	
-	@IBAction private func drawWinnerButton(_ sender: Any) {
-		// MARK: - TODO: only the raffle creator can pick the winner
-		// drawWinnerButton hidden to participants
-		// drawWinnerButton hidden if there is a winner
-	}
-	
+		
 	// MARK: - Private Methods
 	
-	private func configureViewController() {
+	private func setTableViewDelegatesAndDataSource() {
 		allParticipantsTableView.delegate = self
 		allParticipantsTableView.dataSource = self
+	}
+	
+	private func setNavigationTitleToRaffleName() {
 		navigationItem.title = "\(raffle.name)"
+		
+	}
+	
+	private func loadTotalNumberOfParticipants() {
 		// MARK: - BUG: load the total number of raffle participants
-		//		participantCountLabel.text = "Total Participants: \(participantList.count)"
-		//		print(participantList.count)
+		// participantCountLabel.text = "Total Participants: \(participantList.count)"
+		// print(participantList.count)
 	}
 	
 	private func loadAllRaffleParticipants() {
@@ -69,6 +67,12 @@ class RaffleDetailViewController: UIViewController {
 		}
 	}
 	
+	private func displayAlert(title: String, message: String) {
+		let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+		alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+		present(alertVC, animated: true, completion: nil)
+	}
+	
 	// MARK: - Segue Methods
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		guard let segueIdentifier = segue.identifier else { fatalError("No identifier on segue") }
@@ -83,6 +87,11 @@ class RaffleDetailViewController: UIViewController {
 				fatalError("Unexpected segue VC")
 			}
 			drawWinnerVC.raffle = raffle
+		case "winnerInfoSegue":
+			guard let winnerInfo = segue.destination as? RaffleWinnerInfoViewController else {
+				fatalError("Unexpected segue VC")
+			}
+			winnerInfo.raffles = raffle
 		default:
 			fatalError("Unexpected segue identifier")
 		}

@@ -60,7 +60,7 @@ class RegisterNewParticipantViewController: UIViewController {
 		}
 		print(participant)
 		
-		RaffleAPIClient.manager.registerNewParticipant(with: raffle.id, participantInfo: participant) { [weak self] result in
+		RaffleAPIClient.manager.postNewParticipant(with: raffle.id, participantInfo: participant) { [weak self] result in
 			switch result {
 			case .success:
 				self?.displayRegistrationSuccessAlert()

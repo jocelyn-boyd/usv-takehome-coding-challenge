@@ -46,7 +46,6 @@ struct RaffleAPIClient {
 	}
 	
 	func getAllRaffleParticipants(with raffle_id: Int, completionHandler: @escaping (Result<[RegisteredParticipant], AppError>) -> Void) {
-		
 		var raffleParticipantURL: URL {
 			guard let url = URL(string: rootEndpoint + "/api/raffles/\(raffle_id)/participants") else {
 				fatalError("Error: Invalid URL")
@@ -71,34 +70,7 @@ struct RaffleAPIClient {
 		}
 	}
 	
-	func getRaffleWinner(with raffle_id: Int, completionHandler: @escaping (Result<RaffleWinner, AppError>) -> Void) {
-		
-		var raffleWinnerURL: URL {
-			guard let url = URL(string: rootEndpoint + "/api/raffles/\(raffle_id)/winner") else {
-				fatalError("Error: Invalid URL")
-			}
-			return url
-		}
-		
-		NetworkHelper.manager.performDataTask(withUrl: raffleWinnerURL, andMethod: .get) { result in
-			switch result {
-			case let .failure(error):
-				completionHandler(.failure(error))
-				return
-			case let .success(data):
-				do {
-					let winner = try RaffleWinner.getRaffleWinner(from: data)
-					completionHandler(.success(winner))
-				}
-				catch {
-					completionHandler(.failure(.couldNotParseJSON(rawError: error)))
-				}
-			}
-		}
-	}
-	
 	func getRaffleDetails(with raffle_id: Int, completionHandler: @escaping (Result<RaffleDetails, AppError>) -> Void) {
-		
 		var raffleDetailsURL: URL {
 			guard let url = URL(string: rootEndpoint + "/api/raffles/\(raffle_id)") else {
 				fatalError("Error: Invalid URL")
@@ -123,6 +95,33 @@ struct RaffleAPIClient {
 		}
 	}
 	
+	func getRaffleWinnerInfo(with raffle_id: Int, completionHandler: @escaping (Result<RaffleWinner, AppError>) -> Void) {
+		var raffleWinnerURL: URL {
+			guard let url = URL(string: rootEndpoint + "/api/raffles/\(raffle_id)/winner") else {
+				fatalError("Error: Invalid URL")
+			}
+			return url
+		}
+		
+		NetworkHelper.manager.performDataTask(withUrl: raffleWinnerURL, andMethod: .get) { result in
+			switch result {
+			case let .failure(error):
+				completionHandler(.failure(error))
+				return
+			case let .success(data):
+				do {
+					let winner = try RaffleWinner.getRaffleWinner(from: data)
+					completionHandler(.success(winner))
+				}
+				catch {
+					completionHandler(.failure(.couldNotParseJSON(rawError: error)))
+				}
+			}
+		}
+	}
+	
+
+	
 	// MARK: - POST Requests
 	
 	func postNewRaffle(_ raffle: NewRaffle, completionHandler: @escaping (Result<Data, AppError>) -> Void) {
@@ -143,7 +142,7 @@ struct RaffleAPIClient {
 																					})
 	}
 	
-	func registerNewParticipant(with raffle_id: Int, participantInfo: NewParticipant, completionHandler: @escaping (Result<Data, AppError>) -> Void) {
+	func postNewParticipant(with raffle_id: Int, participantInfo: NewParticipant, completionHandler: @escaping (Result<Data, AppError>) -> Void) {
 		guard let encodedParticipantData = try? JSONEncoder().encode(participantInfo) else {
 			fatalError("Unable to json encode project")
 		}

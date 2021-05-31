@@ -29,6 +29,7 @@ class AllRafflesListViewController: UIViewController {
 	}
 	
 	// MARK: - Private Methods
+	
 	private func configureTableView() {
 		allRafflesTableView.delegate = self
 		allRafflesTableView.dataSource = self
@@ -39,7 +40,8 @@ class AllRafflesListViewController: UIViewController {
 			DispatchQueue.main.async { [weak self] in
 				switch result {
 				case let .success(raffles):
-					self?.allRaffles = raffles.sorted() { $0.dateCreated < $1.dateCreated }
+					self?.allRaffles = raffles.sorted() { $0.dateCreated > $1.dateCreated }
+					// dump(self?.allRaffles)
 				case let .failure(error):
 					print(error.localizedDescription)
 				}

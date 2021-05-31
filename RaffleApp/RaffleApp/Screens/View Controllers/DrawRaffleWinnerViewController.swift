@@ -66,7 +66,7 @@ class DrawRaffleWinnerViewController: UIViewController {
 	}
 	
 	private func getRaffleWinner() {
-		RaffleAPIClient.manager.getRaffleWinner(with: raffle.id) { [weak self] result in
+		RaffleAPIClient.manager.getRaffleWinnerInfo(with: raffle.id) { [weak self] result in
 			switch result {
 			case .success:
 				if self?.secretTokenTextField.text == self?.secret_token {

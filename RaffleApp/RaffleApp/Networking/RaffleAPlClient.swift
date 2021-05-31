@@ -45,7 +45,7 @@ struct RaffleAPIClient {
 		}
 	}
 	
-	func getAllRaffleParticipants(with raffle_id: Int, completionHandler: @escaping (Result<[Participant], AppError>) -> Void) {
+	func getAllRaffleParticipants(with raffle_id: Int, completionHandler: @escaping (Result<[RegisteredParticipant], AppError>) -> Void) {
 		
 		var raffleParticipantURL: URL {
 			guard let url = URL(string: rootEndpoint + "/api/raffles/\(raffle_id)/participants") else {
@@ -61,7 +61,7 @@ struct RaffleAPIClient {
 				return
 			case let .success(data):
 				do {
-					let participants = try Participant.getAllParticipants(from: data)
+					let participants = try RegisteredParticipant.getAllParticipants(from: data)
 					completionHandler(.success(participants))
 				}
 				catch {
@@ -89,4 +89,29 @@ struct RaffleAPIClient {
 																						}
 																					})
 	}
+	
+	func registerNewParticipant(with raffle_id: Int, participantInfo: NewParticipant, completionHandler: @escaping (Result<Data, AppError>) -> Void) {
+		guard let encodedParticipantData = try? JSONEncoder().encode(participantInfo) else {
+			fatalError("Unable to json encode project")
+		}
+		var raffleParticipantURL: URL {
+			guard let url = URL(string: rootEndpoint + "/api/raffles/\(raffle_id)/participants") else {
+				fatalError("Error: Invalid URL")
+			}
+			return url
+		}
+		print(String(data: encodedParticipantData, encoding: .utf8)!)
+		NetworkHelper.manager.performDataTask(withUrl: raffleParticipantURL,
+																					andHTTPBody: encodedParticipantData,
+																					andMethod: .post,
+																					completionHandler: { result in
+																						switch result {
+																						case let .success(data):
+																							completionHandler(.success(data))
+																						case let .failure(error):
+																							completionHandler(.failure(error))
+																						}
+																					})
+	}
+
 }

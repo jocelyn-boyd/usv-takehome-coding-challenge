@@ -64,10 +64,10 @@ class RaffleModelTest: XCTestCase {
 	
 	func testLoadAllParticipants() {
 		let participantData = getAllParticipantsJSONData()
-		var sampleParticipantList = [Participant]()
+		var sampleParticipantList = [RegisteredParticipant]()
 		
 		do {
-			sampleParticipantList = try Participant.getAllParticipants(from: participantData)
+			sampleParticipantList = try RegisteredParticipant.getAllParticipants(from: participantData)
 			print(sampleParticipantList)
 		} catch {
 			print(error)

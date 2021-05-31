@@ -11,7 +11,7 @@ class RaffleDetailViewController: UIViewController {
 	// MARK: - Internal Properties
 	
 	var raffle: Raffle!
-	var participantList = [Participant]() {
+	var participantList = [RegisteredParticipant]() {
 		didSet {
 			allParticipantsTableView.reloadData()
 		}
@@ -33,12 +33,17 @@ class RaffleDetailViewController: UIViewController {
 	
 	// MARK: - IBActions
 	
-	@IBAction private func registerParticipantButton(_ sender: UIButton) {
-		print("register button pressed")
+	@IBAction private func registerNewParticipantButton(_ sender: UIButton) {
+		print("register new participant button pressed")
+		//MARK: - TODO: raffle creator cannot register as a participant in their own raffle
+		// registerParticipantButton hidden to raffle creator
 	}
 	
-	@IBAction private func pickAWinnerButton(_ sender: Any) {
-		print("pick winner button pressed")
+	@IBAction private func drawWinnerButton(_ sender: Any) {
+		print("draw winner button pressed")
+		// MARK: - TODO: only the raffle creator can pick the winner
+		// drawWinnerButton hidden to participants
+		// drawWinnerButton hidden if there is a winner
 	}
 	
 	// MARK: - Private Methods
@@ -65,6 +70,20 @@ class RaffleDetailViewController: UIViewController {
 			}
 		}
 	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		guard let segueIdentifier = segue.identifier else { fatalError("No identifier on segue") }
+		switch segueIdentifier {
+		case "registerSegue":
+			guard let registerVC = segue.destination as? RegisterNewParticipantViewController else {
+				fatalError("Unexpected segue VC")
+			}
+			registerVC.raffle = raffle
+		default:
+			fatalError("Unexpected segue identifier")
+		}
+	}
+	
 }
 
 // MARK: - Extensions

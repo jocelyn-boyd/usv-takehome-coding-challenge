@@ -20,7 +20,7 @@
 		0882F0512662EB400070EF3F /* ParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F0502662EB400070EF3F /* ParticipantCell.swift */; };
 		0882F0532662EC4C0070EF3F /* RaffleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F0522662EC4C0070EF3F /* RaffleDetailViewController.swift */; };
 		0882F05A2663068A0070EF3F /* PickWinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F0592663068A0070EF3F /* PickWinnerViewController.swift */; };
-		0882F05C266306A80070EF3F /* RegisterParticipantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F05B266306A80070EF3F /* RegisterParticipantViewController.swift */; };
+		0882F05C266306A80070EF3F /* RegisterNewParticipantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F05B266306A80070EF3F /* RegisterNewParticipantViewController.swift */; };
 		0882F05E266327BE0070EF3F /* RaffleWinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F05D266327BE0070EF3F /* RaffleWinnerViewController.swift */; };
 		0882F0602663E6E10070EF3F /* AllRafflesSample.json in Resources */ = {isa = PBXBuildFile; fileRef = 0882F05F2663E6E10070EF3F /* AllRafflesSample.json */; };
 		0882F0622663ECBE0070EF3F /* RaffleModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F0612663ECBE0070EF3F /* RaffleModelTest.swift */; };
@@ -28,8 +28,9 @@
 		0882F067266415C90070EF3F /* RaffleAPlClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F066266415C90070EF3F /* RaffleAPlClient.swift */; };
 		0882F0692664348D0070EF3F /* NewRaffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F0682664348D0070EF3F /* NewRaffle.swift */; };
 		0882F06C266438B40070EF3F /* String+Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F06B266438B40070EF3F /* String+Validations.swift */; };
-		0882F06E26645B730070EF3F /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F06D26645B730070EF3F /* Participant.swift */; };
+		0882F06E26645B730070EF3F /* RegisteredParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F06D26645B730070EF3F /* RegisteredParticipant.swift */; };
 		0882F07026645F0C0070EF3F /* RaffleParticipantSample.json in Resources */ = {isa = PBXBuildFile; fileRef = 0882F06F26645F0C0070EF3F /* RaffleParticipantSample.json */; };
+		0882F072266482BF0070EF3F /* NewParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F071266482BF0070EF3F /* NewParticipant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +61,7 @@
 		0882F0502662EB400070EF3F /* ParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantCell.swift; sourceTree = "<group>"; };
 		0882F0522662EC4C0070EF3F /* RaffleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleDetailViewController.swift; sourceTree = "<group>"; };
 		0882F0592663068A0070EF3F /* PickWinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickWinnerViewController.swift; sourceTree = "<group>"; };
-		0882F05B266306A80070EF3F /* RegisterParticipantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterParticipantViewController.swift; sourceTree = "<group>"; };
+		0882F05B266306A80070EF3F /* RegisterNewParticipantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewParticipantViewController.swift; sourceTree = "<group>"; };
 		0882F05D266327BE0070EF3F /* RaffleWinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleWinnerViewController.swift; sourceTree = "<group>"; };
 		0882F05F2663E6E10070EF3F /* AllRafflesSample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AllRafflesSample.json; sourceTree = "<group>"; };
 		0882F0612663ECBE0070EF3F /* RaffleModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleModelTest.swift; sourceTree = "<group>"; };
@@ -68,8 +69,9 @@
 		0882F066266415C90070EF3F /* RaffleAPlClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleAPlClient.swift; sourceTree = "<group>"; };
 		0882F0682664348D0070EF3F /* NewRaffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRaffle.swift; sourceTree = "<group>"; };
 		0882F06B266438B40070EF3F /* String+Validations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Validations.swift"; sourceTree = "<group>"; };
-		0882F06D26645B730070EF3F /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
+		0882F06D26645B730070EF3F /* RegisteredParticipant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredParticipant.swift; sourceTree = "<group>"; };
 		0882F06F26645F0C0070EF3F /* RaffleParticipantSample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RaffleParticipantSample.json; sourceTree = "<group>"; };
+		0882F071266482BF0070EF3F /* NewParticipant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewParticipant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +161,8 @@
 			children = (
 				0882F0482661B8930070EF3F /* Raffle.swift */,
 				0882F0682664348D0070EF3F /* NewRaffle.swift */,
-				0882F06D26645B730070EF3F /* Participant.swift */,
+				0882F06D26645B730070EF3F /* RegisteredParticipant.swift */,
+				0882F071266482BF0070EF3F /* NewParticipant.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,7 +183,7 @@
 				0882F04C2662A8AE0070EF3F /* CreateRaffleViewController.swift */,
 				0882F0522662EC4C0070EF3F /* RaffleDetailViewController.swift */,
 				0882F0592663068A0070EF3F /* PickWinnerViewController.swift */,
-				0882F05B266306A80070EF3F /* RegisterParticipantViewController.swift */,
+				0882F05B266306A80070EF3F /* RegisterNewParticipantViewController.swift */,
 				0882F05D266327BE0070EF3F /* RaffleWinnerViewController.swift */,
 			);
 			path = "View Controllers";
@@ -306,7 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0882F05E266327BE0070EF3F /* RaffleWinnerViewController.swift in Sources */,
-				0882F06E26645B730070EF3F /* Participant.swift in Sources */,
+				0882F06E26645B730070EF3F /* RegisteredParticipant.swift in Sources */,
 				0882F0532662EC4C0070EF3F /* RaffleDetailViewController.swift in Sources */,
 				0882F0512662EB400070EF3F /* ParticipantCell.swift in Sources */,
 				0882F067266415C90070EF3F /* RaffleAPlClient.swift in Sources */,
@@ -314,11 +317,12 @@
 				0882F0642664152B0070EF3F /* NetworkHelper.swift in Sources */,
 				0882F0692664348D0070EF3F /* NewRaffle.swift in Sources */,
 				0882F02326618ED80070EF3F /* AllRafflesListViewController.swift in Sources */,
+				0882F072266482BF0070EF3F /* NewParticipant.swift in Sources */,
 				0882F01F26618ED80070EF3F /* AppDelegate.swift in Sources */,
 				0882F04F2662AD940070EF3F /* RaffleCell.swift in Sources */,
 				0882F05A2663068A0070EF3F /* PickWinnerViewController.swift in Sources */,
 				0882F06C266438B40070EF3F /* String+Validations.swift in Sources */,
-				0882F05C266306A80070EF3F /* RegisterParticipantViewController.swift in Sources */,
+				0882F05C266306A80070EF3F /* RegisterNewParticipantViewController.swift in Sources */,
 				0882F04D2662A8AE0070EF3F /* CreateRaffleViewController.swift in Sources */,
 				0882F02126618ED80070EF3F /* SceneDelegate.swift in Sources */,
 			);

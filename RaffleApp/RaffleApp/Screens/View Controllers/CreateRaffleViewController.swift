@@ -8,7 +8,6 @@
 import UIKit
 
 class CreateRaffleViewController: UIViewController {
-	
 	// MARK: - IBOutlets
 	
 	@IBOutlet private weak var raffleNameTextField: UITextField!
@@ -53,7 +52,7 @@ class CreateRaffleViewController: UIViewController {
 			switch result {
 			case .success:
 				self?.displayPostSuccessfulAlert()
-				// MARK: TODO: Display successful post alert, dismiss CreateVC when OK is pressed
+			// MARK: TODO: Display successful post alert, dismiss CreateVC when OK is pressed
 			case let .failure(error):
 				self?.displayPostFailureAlert(with: error)
 			}

@@ -11,10 +11,10 @@ enum JSONError: Error {
 		case decodingError(Error)
 }
 
-struct Raffle: Codable {
-	let raffle_id: Int
+struct AllRaffles: Codable {
+	let id: Int
 	let name: String
-	let created_at: String?
+	let created_at: String
 	let raffled_at: String?
 	let winner_id: Int?
 	
@@ -25,7 +25,7 @@ struct Raffle: Codable {
 		dateFormatter.locale = Locale(identifier: "en_US_POSIX")
 		dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
 
-		let date = dateFormatter.date(from: dateCreatedString!)
+		let date = dateFormatter.date(from: dateCreatedString)
 		
 		dateFormatter.dateStyle = .medium
 		dateFormatter.timeStyle = .short
@@ -48,17 +48,9 @@ struct Raffle: Codable {
 		return "\(formattedDate)"
 	}
 	
-	private enum CodingKeys: String, CodingKey {
-		case raffle_id = "id"
-		case name
-		case created_at
-		case raffled_at
-		case winner_id
-	}
-	
-	static func getAllRaffles(from jsonData: Data) throws -> [Raffle] {
+	static func getAllRaffles(from jsonData: Data) throws -> [AllRaffles] {
 		do {
-			let raffles = try JSONDecoder().decode([Raffle].self, from: jsonData)
+			let raffles = try JSONDecoder().decode([AllRaffles].self, from: jsonData)
 			return raffles
 		} catch {
 			throw JSONError.decodingError(error)

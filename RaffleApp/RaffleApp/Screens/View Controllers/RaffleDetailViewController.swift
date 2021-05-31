@@ -8,19 +8,19 @@
 import UIKit
 
 class RaffleDetailViewController: UIViewController {
+	// MARK: - IBOutlets
+	
+	@IBOutlet private var allParticipantsTableView: UITableView!
+	@IBOutlet weak var participantCountLabel: UILabel!
+	
 	// MARK: - Internal Properties
 	
-	var raffle: Raffle!
+	var raffle: AllRaffles!
 	var participantList = [RegisteredParticipant]() {
 		didSet {
 			allParticipantsTableView.reloadData()
 		}
 	}
-	
-	// MARK: - IBOutlets
-	
-	@IBOutlet private var allParticipantsTableView: UITableView!
-	@IBOutlet weak var participantCountLabel: UILabel!
 	
 	// MARK: - Lifecycle Methods
 	
@@ -34,13 +34,11 @@ class RaffleDetailViewController: UIViewController {
 	// MARK: - IBActions
 	
 	@IBAction private func registerNewParticipantButton(_ sender: UIButton) {
-		print("register new participant button pressed")
 		//MARK: - TODO: raffle creator cannot register as a participant in their own raffle
 		// registerParticipantButton hidden to raffle creator
 	}
 	
 	@IBAction private func drawWinnerButton(_ sender: Any) {
-		print("draw winner button pressed")
 		// MARK: - TODO: only the raffle creator can pick the winner
 		// drawWinnerButton hidden to participants
 		// drawWinnerButton hidden if there is a winner
@@ -53,12 +51,12 @@ class RaffleDetailViewController: UIViewController {
 		allParticipantsTableView.dataSource = self
 		navigationItem.title = "\(raffle.name)"
 		// MARK: - BUG: load the total number of raffle participants
-		participantCountLabel.text = "Total Participants: \(participantList.count)"
-		print(participantList.count)
+		//		participantCountLabel.text = "Total Participants: \(participantList.count)"
+		//		print(participantList.count)
 	}
 	
 	private func loadAllRaffleParticipants() {
-		let id = raffle.raffle_id
+		let id = raffle.id
 		RaffleAPIClient.manager.getAllRaffleParticipants(with: id) { [weak self] result in
 			DispatchQueue.main.async {
 				switch result {
@@ -71,14 +69,20 @@ class RaffleDetailViewController: UIViewController {
 		}
 	}
 	
+	// MARK: - Segue Methods
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		guard let segueIdentifier = segue.identifier else { fatalError("No identifier on segue") }
 		switch segueIdentifier {
-		case "registerSegue":
-			guard let registerVC = segue.destination as? RegisterNewParticipantViewController else {
+		case "registerNewParticipantSegue":
+			guard let registrationVC = segue.destination as? RegisterNewParticipantViewController else {
 				fatalError("Unexpected segue VC")
 			}
-			registerVC.raffle = raffle
+			registrationVC.raffle = raffle
+		case "drawWinnerSegue":
+			guard let drawWinnerVC = segue.destination as? DrawRaffleWinnerViewController else {
+				fatalError("Unexpected segue VC")
+			}
+			drawWinnerVC.raffle = raffle
 		default:
 			fatalError("Unexpected segue identifier")
 		}
@@ -86,7 +90,7 @@ class RaffleDetailViewController: UIViewController {
 	
 }
 
-// MARK: - Extensions
+// MARK: - TableView Data Source & Delegate Extensions
 
 extension RaffleDetailViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

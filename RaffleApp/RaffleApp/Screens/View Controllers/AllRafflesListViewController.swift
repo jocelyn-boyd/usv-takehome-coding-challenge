@@ -8,26 +8,27 @@
 import UIKit
 
 class AllRafflesListViewController: UIViewController {
-	// MARK: - Internal Properties
-	var allRaffles = [Raffle]() {
+	// MARK: - IBOutlets
+	
+	@IBOutlet private var allRafflesTableView: UITableView!
+	
+	// MARK: - Properties
+	
+	var allRaffles = [AllRaffles]() {
 		didSet {
 			allRafflesTableView.reloadData()
 		}
 	}
 	
-	// MARK: - IBOutlets
-	@IBOutlet private var allRafflesTableView: UITableView!
-	
 	// MARK: - Lifecycle Methods
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
 		configureTableView()
 		loadAllRafflesData()
 	}
 	
-	// MARK: - Private Metholds
+	// MARK: - Private Methods
 	private func configureTableView() {
 		allRafflesTableView.delegate = self
 		allRafflesTableView.dataSource = self
@@ -38,7 +39,7 @@ class AllRafflesListViewController: UIViewController {
 			DispatchQueue.main.async { [weak self] in
 				switch result {
 				case let .success(raffles):
-					self?.allRaffles = raffles.sorted() { $0.dateCreated > $1.dateCreated }
+					self?.allRaffles = raffles.sorted() { $0.dateCreated < $1.dateCreated }
 				case let .failure(error):
 					print(error.localizedDescription)
 				}
@@ -46,10 +47,12 @@ class AllRafflesListViewController: UIViewController {
 		}
 	}
 	
+	// MARK: - Segue Methods
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		guard let segueIdentifier = segue.identifier else { fatalError("No identifier on segue") }
 		switch segueIdentifier {
-		case "raffleSegue":
+		case "raffleDetailSegue":
 			guard let raffleDetailVC = segue.destination as? RaffleDetailViewController else {
 				fatalError("Unexpected segue VC")
 			}
@@ -67,7 +70,7 @@ class AllRafflesListViewController: UIViewController {
 	}
 }
 
-// MARK: - Extensions
+// MARK: - TableView Data Source & Delegate Extensions
 
 extension AllRafflesListViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

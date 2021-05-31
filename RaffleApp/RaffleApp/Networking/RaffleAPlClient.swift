@@ -16,18 +16,18 @@ struct RaffleAPIClient {
 	private let rootEndpoint = "https://raffle-fs-app.herokuapp.com"
 	
 	
- var raffleURL: URL {
-	 guard let url = URL(string: rootEndpoint + "/api/raffles") else {
-		 fatalError("Error: Invalid URL")
-	 }
-	 return url
- }
+	var raffleURL: URL {
+		guard let url = URL(string: rootEndpoint + "/api/raffles") else {
+			fatalError("Error: Invalid URL")
+		}
+		return url
+	}
 	
 	private init() {}
 	
-	// MARK: - Internal Methods
+	// MARK: - GET Requests
 	
-	func getAllRaffles(completionHandler: @escaping (Result<[Raffle], AppError>) -> Void) {
+	func getAllRaffles(completionHandler: @escaping (Result<[AllRaffles], AppError>) -> Void) {
 		NetworkHelper.manager.performDataTask(withUrl: raffleURL, andMethod: .get) { result in
 			switch result {
 			case let .failure(error):
@@ -35,7 +35,7 @@ struct RaffleAPIClient {
 				return
 			case let .success(data):
 				do {
-					let raffles = try Raffle.getAllRaffles(from: data)
+					let raffles = try AllRaffles.getAllRaffles(from: data)
 					completionHandler(.success(raffles))
 				}
 				catch {
@@ -71,6 +71,59 @@ struct RaffleAPIClient {
 		}
 	}
 	
+	func getRaffleWinner(with raffle_id: Int, completionHandler: @escaping (Result<RaffleWinner, AppError>) -> Void) {
+		
+		var raffleWinnerURL: URL {
+			guard let url = URL(string: rootEndpoint + "/api/raffles/\(raffle_id)/winner") else {
+				fatalError("Error: Invalid URL")
+			}
+			return url
+		}
+		
+		NetworkHelper.manager.performDataTask(withUrl: raffleWinnerURL, andMethod: .get) { result in
+			switch result {
+			case let .failure(error):
+				completionHandler(.failure(error))
+				return
+			case let .success(data):
+				do {
+					let winner = try RaffleWinner.getRaffleWinner(from: data)
+					completionHandler(.success(winner))
+				}
+				catch {
+					completionHandler(.failure(.couldNotParseJSON(rawError: error)))
+				}
+			}
+		}
+	}
+	
+	func getRaffleDetails(with raffle_id: Int, completionHandler: @escaping (Result<RaffleDetails, AppError>) -> Void) {
+		
+		var raffleDetailsURL: URL {
+			guard let url = URL(string: rootEndpoint + "/api/raffles/\(raffle_id)") else {
+				fatalError("Error: Invalid URL")
+			}
+			return url
+		}
+		
+		NetworkHelper.manager.performDataTask(withUrl: raffleDetailsURL, andMethod: .get) { result in
+			switch result {
+			case let .failure(error):
+				completionHandler(.failure(error))
+				return
+			case let .success(data):
+				do {
+					let details = try RaffleDetails.getRaffleDetails(from: data)
+					completionHandler(.success(details))
+				}
+				catch {
+					completionHandler(.failure(.couldNotParseJSON(rawError: error)))
+				}
+			}
+		}
+	}
+	
+	// MARK: - POST Requests
 	
 	func postNewRaffle(_ raffle: NewRaffle, completionHandler: @escaping (Result<Data, AppError>) -> Void) {
 		guard let encodedRaffleData = try? JSONEncoder().encode(raffle) else {
@@ -113,5 +166,29 @@ struct RaffleAPIClient {
 																						}
 																					})
 	}
-
+	
+	// MARK: - TODO: Pick a winner from the participants at random for a raffle
+	func drawRaffleWinner(with raffle_id: Int, raffleInfo: RaffleDetails, completionHandler: @escaping (Result<Data, AppError>) -> Void) {
+		guard let encodedParticipantData = try? JSONEncoder().encode(raffleInfo) else {
+			fatalError("Unable to json encode project")
+		}
+		var raffleWinnerURL: URL {
+			guard let url = URL(string: rootEndpoint + "/api/raffles/\(raffle_id)/winner") else {
+				fatalError("Error: Invalid URL")
+			}
+			return url
+		}
+		print(String(data: encodedParticipantData, encoding: .utf8)!)
+		NetworkHelper.manager.performDataTask(withUrl: raffleWinnerURL,
+																					andHTTPBody: encodedParticipantData,
+																					andMethod: .post,
+																					completionHandler: { result in
+																						switch result {
+																						case let .success(data):
+																							completionHandler(.success(data))
+																						case let .failure(error):
+																							completionHandler(.failure(error))
+																						}
+																					})
+	}
 }

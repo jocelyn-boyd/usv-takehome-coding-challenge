@@ -10,8 +10,7 @@ import UIKit
 class RegisterNewParticipantViewController: UIViewController {
 	// MARK: - Internal Properties
 	
-	var raffle: Raffle!
-	
+	var raffle: AllRaffles!
 	
 	// MARK: - IBOutlets
 	
@@ -61,7 +60,7 @@ class RegisterNewParticipantViewController: UIViewController {
 		}
 		print(participant)
 		
-		RaffleAPIClient.manager.registerNewParticipant(with: raffle.raffle_id, participantInfo: participant) { [weak self] result in
+		RaffleAPIClient.manager.registerNewParticipant(with: raffle.id, participantInfo: participant) { [weak self] result in
 			switch result {
 			case .success:
 				self?.displayRegistrationSuccessAlert()

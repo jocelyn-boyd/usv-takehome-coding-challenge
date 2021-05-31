@@ -12,14 +12,14 @@ enum JSONError: Error {
 }
 
 struct Raffle: Codable {
-	let id: Int?
+	let raffle_id: Int
 	let name: String
-	let createdAt: String?
-	let raffledAt: String?
-	let winnerId: Int?
+	let created_at: String?
+	let raffled_at: String?
+	let winner_id: Int?
 	
 	var dateCreated: String  {
-		let dateCreatedString = createdAt
+		let dateCreatedString = created_at
 
 		let dateFormatter = DateFormatter()
 		dateFormatter.locale = Locale(identifier: "en_US_POSIX")
@@ -34,7 +34,7 @@ struct Raffle: Codable {
 	}
 	
 	var dateRaffled: String? {
-		let dateCreatedString = raffledAt
+		let dateCreatedString = raffled_at
 
 		let dateFormatter = DateFormatter()
 		dateFormatter.locale = Locale(identifier: "en_US_POSIX")
@@ -49,11 +49,11 @@ struct Raffle: Codable {
 	}
 	
 	private enum CodingKeys: String, CodingKey {
-		case id
+		case raffle_id = "id"
 		case name
-		case createdAt = "created_at"
-		case raffledAt = "raffled_at"
-		case winnerId = "winner_id"
+		case created_at
+		case raffled_at
+		case winner_id
 	}
 	
 	static func getAllRaffles(from jsonData: Data) throws -> [Raffle] {

@@ -14,16 +14,14 @@ struct RaffleAPIClient {
 	
 	// MARK: - Private Properties and Initializers
 	private let rootEndpoint = "https://raffle-fs-app.herokuapp.com"
-	private var raffleURL: URL {
-		guard let url = URL(string: rootEndpoint + "/api/raffles") else {
-			fatalError("Error: Invalid URL")
-		}
-		return url
-	}
 	
-//	private var winnerURL: URL {
-//		guard let url = URL(string: rootEndpoint + "/api/raffles/:id/winner")
-//	}
+	
+ var raffleURL: URL {
+	 guard let url = URL(string: rootEndpoint + "/api/raffles") else {
+		 fatalError("Error: Invalid URL")
+	 }
+	 return url
+ }
 	
 	private init() {}
 	
@@ -37,8 +35,8 @@ struct RaffleAPIClient {
 				return
 			case let .success(data):
 				do {
-					let projects = try Raffle.getAllRaffles(from: data)
-					completionHandler(.success(projects))
+					let raffles = try Raffle.getAllRaffles(from: data)
+					completionHandler(.success(raffles))
 				}
 				catch {
 					completionHandler(.failure(.couldNotParseJSON(rawError: error)))
@@ -46,6 +44,33 @@ struct RaffleAPIClient {
 			}
 		}
 	}
+	
+	func getAllRaffleParticipants(with raffle_id: Int, completionHandler: @escaping (Result<[Participant], AppError>) -> Void) {
+		
+		var raffleParticipantURL: URL {
+			guard let url = URL(string: rootEndpoint + "/api/raffles/\(raffle_id)/participants") else {
+				fatalError("Error: Invalid URL")
+			}
+			return url
+		}
+		
+		NetworkHelper.manager.performDataTask(withUrl: raffleParticipantURL, andMethod: .get) { result in
+			switch result {
+			case let .failure(error):
+				completionHandler(.failure(error))
+				return
+			case let .success(data):
+				do {
+					let participants = try Participant.getAllParticipants(from: data)
+					completionHandler(.success(participants))
+				}
+				catch {
+					completionHandler(.failure(.couldNotParseJSON(rawError: error)))
+				}
+			}
+		}
+	}
+	
 	
 	func postNewRaffle(_ raffle: NewRaffle, completionHandler: @escaping (Result<Data, AppError>) -> Void) {
 		guard let encodedRaffleData = try? JSONEncoder().encode(raffle) else {

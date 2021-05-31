@@ -8,7 +8,6 @@
 import UIKit
 
 class PickWinnerViewController: UIViewController {
-
 	@IBOutlet weak var secretTokenTextView: UITextField!
 	
 	override func viewDidLoad() {

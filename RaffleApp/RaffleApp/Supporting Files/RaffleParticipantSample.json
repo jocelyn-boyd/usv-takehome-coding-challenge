@@ -1,0 +1,47 @@
+[
+		{
+				"id": 170,
+				"raffle_id": 8,
+				"firstname": "first",
+				"lastname": "last",
+				"email": "afsa@gmailcom",
+				"phone": null,
+				"registered_at": "2021-05-30T15:49:50.849Z"
+		},
+		{
+				"id": 172,
+				"raffle_id": 8,
+				"firstname": "Alfrado",
+				"lastname": "last",
+				"email": "asdga3@gmail",
+				"phone": null,
+				"registered_at": "2021-05-30T15:50:32.004Z"
+		},
+		{
+				"id": 171,
+				"raffle_id": 8,
+				"firstname": "Carno",
+				"lastname": "Last",
+				"email": "Min@gmail.com",
+				"phone": null,
+				"registered_at": "2021-05-30T15:50:13.693Z"
+		},
+		{
+				"id": 175,
+				"raffle_id": 8,
+				"firstname": "carmen",
+				"lastname": "lady",
+				"email": "KJNLA@mgail.com",
+				"phone": "24234212351",
+				"registered_at": "2021-05-30T16:27:31.387Z"
+		},
+		{
+				"id": 177,
+				"raffle_id": 8,
+				"firstname": "fire",
+				"lastname": "base",
+				"email": "firebase@gmail.com",
+				"phone": null,
+				"registered_at": "2021-05-30T17:14:39.676Z"
+		}
+]

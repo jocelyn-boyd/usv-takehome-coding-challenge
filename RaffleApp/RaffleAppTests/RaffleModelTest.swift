@@ -33,6 +33,21 @@ class RaffleModelTest: XCTestCase {
 		}
 	}
 	
+	private func getAllParticipantsJSONData() -> Data {
+		guard let pathToData = Bundle.main.path(forResource: "RaffleParticipantSample", ofType: "json") else {
+			fatalError("RaffleParticipantSample.json file not found")
+		}
+		
+		let internalUrl = URL(fileURLWithPath: pathToData)
+		
+		do {
+			let data = try Data(contentsOf: internalUrl)
+			return data
+		} catch  {
+			fatalError("An error occured: \(error)")
+		}
+	}
+	
 	func testLoadAllRaffles() {
 		let raffleData = getAllRafflesJSONData()
 		var sampleRaffles = [Raffle]()
@@ -46,4 +61,20 @@ class RaffleModelTest: XCTestCase {
 		
 		XCTAssertTrue(sampleRaffles.count != 0, "There are \(sampleRaffles.count) recipes found.")
 	}
+	
+	func testLoadAllParticipants() {
+		let participantData = getAllParticipantsJSONData()
+		var sampleParticipantList = [Participant]()
+		
+		do {
+			sampleParticipantList = try Participant.getAllParticipants(from: participantData)
+			print(sampleParticipantList)
+		} catch {
+			print(error)
+		}
+		
+		XCTAssertTrue(sampleParticipantList.count != 0, "There are \(sampleParticipantList.count) recipes found.")
+	}
+
+	
 }

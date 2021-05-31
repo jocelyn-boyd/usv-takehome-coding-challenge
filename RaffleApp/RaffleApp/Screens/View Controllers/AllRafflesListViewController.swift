@@ -40,8 +40,7 @@ class AllRafflesListViewController: UIViewController {
 			DispatchQueue.main.async { [weak self] in
 				switch result {
 				case let .success(raffles):
-					self?.allRaffles = raffles.sorted() { $0.dateCreated > $1.dateCreated }
-					// dump(self?.allRaffles)
+					self?.allRaffles = raffles.sorted() { $0.created_at > $1.created_at }
 				case let .failure(error):
 					print(error.localizedDescription)
 				}

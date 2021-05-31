@@ -45,5 +45,4 @@ class RaffleWinnerInfoViewController: UIViewController {
 			}
 		}
 	}
-	
 }

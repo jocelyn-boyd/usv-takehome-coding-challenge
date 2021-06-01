@@ -47,12 +47,11 @@ class CreateRaffleViewController: UIViewController {
 			displayInvalidRaffleAlert()
 			return
 		}
-		print(raffle)
+	
 		RaffleAPIClient.manager.postNewRaffle(raffle) { [weak self] result in
 			switch result {
 			case .success:
 				self?.displayPostSuccessfulAlert()
-			// MARK: TODO: Display successful post alert, dismiss CreateVC when OK is pressed
 			case let .failure(error):
 				self?.displayPostFailureAlert(with: error)
 			}
@@ -70,7 +69,11 @@ class CreateRaffleViewController: UIViewController {
 	}
 	
 	private func displayPostSuccessfulAlert() {
-		displayAlert(title: "Success!", message: "\(raffleNameTextField.text!) posted!")
+		let alertVC = UIAlertController(title: "Success!", message: "\(raffleNameTextField.text!) posted!", preferredStyle: .alert)
+		alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+			self.navigationController?.popToRootViewController(animated: true)
+		}))
+		present(alertVC, animated: true, completion: nil)
 	}
 	
 	private func displayPostFailureAlert(with error: Error) {

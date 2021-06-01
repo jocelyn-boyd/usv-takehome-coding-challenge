@@ -25,6 +25,11 @@ class AllRafflesListViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configureTableView()
+	}
+	
+	// when the modal is dismissed, reload the data
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
 		loadAllRafflesData()
 	}
 	
@@ -40,7 +45,7 @@ class AllRafflesListViewController: UIViewController {
 			DispatchQueue.main.async { [weak self] in
 				switch result {
 				case let .success(raffles):
-					self?.allRaffles = raffles.sorted() { $0.created_at > $1.created_at }
+					self?.allRaffles = raffles.sorted() { $0.id < $1.id }
 				case let .failure(error):
 					print(error.localizedDescription)
 				}
@@ -54,7 +59,7 @@ class AllRafflesListViewController: UIViewController {
 		guard let segueIdentifier = segue.identifier else { fatalError("No identifier on segue") }
 		switch segueIdentifier {
 		case "raffleDetailSegue":
-			guard let raffleDetailVC = segue.destination as? RaffleDetailViewController else {
+			guard let raffleDetailVC = segue.destination as? RaffleDetailsParticpantListViewController else {
 				fatalError("Unexpected segue VC")
 			}
 			guard let selectedIndexPath = allRafflesTableView.indexPathForSelectedRow else {
@@ -85,9 +90,9 @@ extension AllRafflesListViewController: UITableViewDelegate, UITableViewDataSour
 		
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "RaffleCell", for: indexPath) as? RaffleCell else { return UITableViewCell() }
 		let raffle = allRaffles[indexPath.row]
-		cell.raffleTitleLabel.text = raffle.name
+		cell.raffleTitleLabel.text = "\(raffle.name) - ID#: \(raffle.id)"
 		cell.dateCreatedLabel.text = "Created: \(String(describing: raffle.dateCreated))"
-		cell.winnerIdLabel.text = raffle.winner_id != nil ? "Winner Id: \(Int.random(in: 1...100)) 🎉" : "No winner yet!"
+		cell.winnerIdLabel.text = raffle.winner_id != nil ? "Winner Id: \(String(describing: raffle.winner_id!)) 🎉" : "No winner yet!"
 		cell.dateOfRaffleLabel.text = raffle.raffled_at != nil ? "Closed: \(String(describing: raffle.dateRaffled!))" : "Click on raffle to register!"
 		return cell
 	}

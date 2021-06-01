@@ -95,7 +95,7 @@ struct RaffleAPIClient {
 		}
 	}
 	
-	func getRaffleWinnerInfo(with raffle_id: Int, completionHandler: @escaping (Result<RaffleWinner, AppError>) -> Void) {
+	func getRaffleWinnerInfo(with raffle_id: Int, completionHandler: @escaping (Result<RaffleWinnerInfo, AppError>) -> Void) {
 		var raffleWinnerURL: URL {
 			guard let url = URL(string: rootEndpoint + "/api/raffles/\(raffle_id)/winner") else {
 				fatalError("Error: Invalid URL")
@@ -110,7 +110,7 @@ struct RaffleAPIClient {
 				return
 			case let .success(data):
 				do {
-					let winner = try RaffleWinner.getRaffleWinner(from: data)
+					let winner = try RaffleWinnerInfo.getRaffleWinner(from: data)
 					completionHandler(.success(winner))
 				}
 				catch {
@@ -166,21 +166,22 @@ struct RaffleAPIClient {
 																					})
 	}
 	
+	// MARK: PUT Requests
 	// MARK: - TODO: Pick a winner from the participants at random for a raffle
-	func drawRaffleWinner(with raffle_id: Int, raffleInfo: RaffleDetails, completionHandler: @escaping (Result<Data, AppError>) -> Void) {
-		guard let encodedParticipantData = try? JSONEncoder().encode(raffleInfo) else {
+	func pickRaffleWinner(with raffle_id: Int, secret_token: Token, completionHandler: @escaping (Result<Data, AppError>) -> Void) {
+		guard let encodedSecretTokenData = try? JSONEncoder().encode(secret_token) else {
 			fatalError("Unable to json encode project")
 		}
-		var raffleWinnerURL: URL {
+		var drawRaffleWinnerURL: URL {
 			guard let url = URL(string: rootEndpoint + "/api/raffles/\(raffle_id)/winner") else {
 				fatalError("Error: Invalid URL")
 			}
 			return url
 		}
-		print(String(data: encodedParticipantData, encoding: .utf8)!)
-		NetworkHelper.manager.performDataTask(withUrl: raffleWinnerURL,
-																					andHTTPBody: encodedParticipantData,
-																					andMethod: .post,
+		print(String(data: encodedSecretTokenData, encoding: .utf8)!)
+		NetworkHelper.manager.performDataTask(withUrl: drawRaffleWinnerURL,
+																					andHTTPBody: encodedSecretTokenData,
+																					andMethod: .put,
 																					completionHandler: { result in
 																						switch result {
 																						case let .success(data):

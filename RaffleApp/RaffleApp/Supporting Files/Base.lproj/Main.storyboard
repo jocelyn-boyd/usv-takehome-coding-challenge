@@ -148,7 +148,7 @@
                     <navigationItem key="navigationItem" title="All Raffles" id="Wph-fC-B9D">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="uLq-yQ-ehm">
                             <connections>
-                                <segue destination="9pS-bW-ClH" kind="presentation" identifier="createRaffleSegue" id="Qtn-V3-ZtZ"/>
+                                <segue destination="9pS-bW-ClH" kind="show" identifier="createRaffleSegue" id="Qtn-V3-ZtZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -165,14 +165,14 @@
             <objects>
                 <viewController id="9pS-bW-ClH" customClass="CreateRaffleViewController" customModule="RaffleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LDl-oJ-ftd">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dSC-H1-VPB">
-                                <rect key="frame" x="19.666666666666657" y="180.66666666666663" width="351" height="395"/>
+                                <rect key="frame" x="19.666666666666657" y="238" width="351" height="422"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="dTY-Jz-gZP">
-                                        <rect key="frame" x="17.333333333333343" y="19.666666666666686" width="316" height="355.33333333333331"/>
+                                        <rect key="frame" x="17.333333333333343" y="21" width="316" height="380"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="PPR-Hr-yEM">
                                                 <rect key="frame" x="0.0" y="0.0" width="316" height="230"/>
@@ -189,7 +189,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjR-dI-Gd6">
-                                                        <rect key="frame" x="0.0" y="86.666666666666657" width="316" height="45"/>
+                                                        <rect key="frame" x="0.0" y="86.666666666666686" width="316" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Secret Token" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfG-Fr-idq">
                                                                 <rect key="frame" x="0.0" y="0.0" width="158" height="45"/>
@@ -212,12 +212,12 @@
                                                         </subviews>
                                                     </stackView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HPr-tv-6jr">
-                                                        <rect key="frame" x="0.0" y="134.99999999999997" width="316" height="46"/>
+                                                        <rect key="frame" x="0.0" y="135" width="316" height="46"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXW-lW-YSM">
-                                                        <rect key="frame" x="0.0" y="183.66666666666666" width="316" height="46.333333333333343"/>
+                                                        <rect key="frame" x="0.0" y="183.66666666666669" width="316" height="46.333333333333343"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <string key="text">You must remember the secret token because it will be asked when picking a winner. Create your own token or randomly generate one!</string>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
@@ -232,7 +232,7 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grI-8V-aPa">
-                                                <rect key="frame" x="0.0" y="310.33333333333337" width="316" height="45"/>
+                                                <rect key="frame" x="0.0" y="335" width="316" height="45"/>
                                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="sSO-fR-tu9"/>
@@ -281,7 +281,7 @@
         <!--Raffle Name-->
         <scene sceneID="K8T-i2-yj1">
             <objects>
-                <viewController id="1pZ-wz-Fd3" customClass="RaffleDetailViewController" customModule="RaffleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1pZ-wz-Fd3" customClass="RaffleDetailsParticpantListViewController" customModule="RaffleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="85r-Nc-WEO">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -330,7 +330,7 @@
                                                                                     <imageReference key="image" image="number" catalog="system" symbolScale="small"/>
                                                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="8" scale="small" weight="light"/>
                                                                                 </imageView>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Participant ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJI-xe-8EH">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Participant ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJI-xe-8EH">
                                                                                     <rect key="frame" x="28" y="0.0" width="264.66666666666669" height="20"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <nil key="textColor"/>
@@ -428,7 +428,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="tHJ-TR-7n8" kind="presentation" identifier="registerNewParticipantSegue" id="Ec3-3r-b4L"/>
+                                            <segue destination="tHJ-TR-7n8" kind="show" identifier="registerNewParticipantSegue" id="Ec3-3r-b4L"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqT-P3-V54">
@@ -438,7 +438,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="wVH-3g-arg" kind="presentation" identifier="drawWinnerSegue" id="V84-gG-VdM"/>
+                                            <segue destination="wVH-3g-arg" kind="show" identifier="drawWinnerSegue" id="V84-gG-VdM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6F-bp-nOl">
@@ -448,7 +448,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="9KP-WW-IkG" kind="presentation" identifier="winnerInfoSegue" id="tKx-5z-WOi"/>
+                                            <segue destination="9KP-WW-IkG" kind="show" identifier="winnerInfoSegue" id="tKx-5z-WOi"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -480,6 +480,7 @@
                         <outlet property="drawWinnerButton" destination="TqT-P3-V54" id="QsX-mz-qmR"/>
                         <outlet property="participantCountLabel" destination="dc5-gN-nbZ" id="kYZ-F5-oRZ"/>
                         <outlet property="registrationButton" destination="w1h-qi-G95" id="IWe-Be-bja"/>
+                        <outlet property="winnerInfo" destination="f6F-bp-nOl" id="1Ul-QJ-Fws"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ukB-NP-uQj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -491,24 +492,24 @@
             <objects>
                 <viewController id="wVH-3g-arg" customClass="DrawRaffleWinnerViewController" customModule="RaffleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BIJ-gF-nsl">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEf-bl-0gh">
-                                <rect key="frame" x="19.666666666666657" y="259.66666666666669" width="351" height="237"/>
+                                <rect key="frame" x="19.666666666666657" y="348.33333333333331" width="351" height="253.33333333333331"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vtA-fs-sRH">
-                                <rect key="frame" x="24" y="271.33333333333331" width="342" height="213.33333333333331"/>
+                                <rect key="frame" x="24" y="361" width="342" height="228"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Draw Winner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wyf-WS-JVj">
-                                        <rect key="frame" x="0.0" y="0.0" width="342" height="46"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="342" height="49.666666666666664"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Secret Token" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R0y-rK-hiP">
-                                        <rect key="frame" x="0.0" y="56" width="342" height="45.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="59.666666666666686" width="342" height="49.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -516,15 +517,15 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the secret token used when the raffle was created." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga3-dV-cpY">
-                                        <rect key="frame" x="0.0" y="111.6666666666667" width="342" height="45.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="118.99999999999999" width="342" height="49.333333333333329"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTa-ms-5Ih">
-                                        <rect key="frame" x="0.0" y="167.33333333333337" width="342" height="46"/>
+                                        <rect key="frame" x="0.0" y="178.33333333333337" width="342" height="49.666666666666657"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                        <state key="normal" title="And the winner is ... ?">
+                                        <state key="normal" title="Submit">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -556,21 +557,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="joi-E1-2fG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="4CZ-iX-fzc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4715" y="643"/>
+            <point key="canvasLocation" x="4649" y="621"/>
         </scene>
         <!--Register New Participant View Controller-->
         <scene sceneID="IX3-iD-O06">
             <objects>
                 <viewController id="tHJ-TR-7n8" customClass="RegisterNewParticipantViewController" customModule="RaffleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5sT-9P-BSj">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T6y-zP-wYd">
-                                <rect key="frame" x="19.666666666666657" y="101.66666666666669" width="351" height="553"/>
+                                <rect key="frame" x="19.666666666666657" y="179.66666666666669" width="351" height="590.66666666666652"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="rhz-wX-mcZ">
-                                        <rect key="frame" x="17.333333333333343" y="27.333333333333314" width="316" height="497.99999999999994"/>
+                                        <rect key="frame" x="17.333333333333343" y="29.333333333333371" width="316" height="532"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" text="Register to participate in the raffle:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogL-9P-4PB">
                                                 <rect key="frame" x="0.0" y="0.0" width="316" height="75"/>
@@ -582,7 +583,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="k4j-aQ-gAe">
-                                                <rect key="frame" x="0.0" y="118" width="316" height="293"/>
+                                                <rect key="frame" x="0.0" y="135" width="316" height="293"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="oxx-sE-ab4" userLabel="First Name Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="316" height="71"/>
@@ -674,7 +675,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MCc-Cb-zid" userLabel="Button Stack View">
-                                                <rect key="frame" x="0.0" y="454" width="316" height="44"/>
+                                                <rect key="frame" x="0.0" y="488" width="316" height="44"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axs-dW-kae">
                                                         <rect key="frame" x="0.0" y="0.0" width="154" height="44"/>
@@ -744,30 +745,30 @@
             <objects>
                 <viewController id="9KP-WW-IkG" customClass="RaffleWinnerInfoViewController" customModule="RaffleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jfF-vn-bnU">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pl1-L3-9b1">
-                                <rect key="frame" x="19.666666666666657" y="259.66666666666669" width="351" height="237"/>
+                                <rect key="frame" x="19.666666666666657" y="348.33333333333331" width="351" height="253.33333333333331"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xEM-bf-FFF">
-                                        <rect key="frame" x="17.333333333333343" y="0.0" width="316" height="237"/>
+                                        <rect key="frame" x="17.333333333333343" y="0.0" width="316" height="253.33333333333334"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sparkles" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Zq6-pc-z2e">
-                                                <rect key="frame" x="0.0" y="-0.6666666666666643" width="316" height="79.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="-0.6666666666666714" width="316" height="85"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N7G-hr-l6q">
-                                                <rect key="frame" x="0.0" y="79" width="316" height="79"/>
+                                                <rect key="frame" x="0.0" y="84.333333333333371" width="316" height="84.666666666666686"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZqW-1C-XvB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="316" height="39.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="316" height="42.333333333333336"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Registered" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeM-dz-5wJ">
-                                                        <rect key="frame" x="0.0" y="39.333333333333314" width="316" height="39.666666666666657"/>
+                                                        <rect key="frame" x="0.0" y="42.333333333333314" width="316" height="42.333333333333343"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -779,13 +780,13 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="E8n-Ey-CAf">
-                                                <rect key="frame" x="0.0" y="158" width="316" height="79"/>
+                                                <rect key="frame" x="0.0" y="169.00000000000006" width="316" height="84.333333333333314"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SRT-7w-HC1" userLabel="Number Stack View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="316" height="21"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="316" height="22.666666666666668"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="number" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hdU-pI-4rS">
-                                                                <rect key="frame" x="0.0" y="0.33333333333333393" width="20" height="20.333333333333332"/>
+                                                                <rect key="frame" x="0.0" y="0.33333333333333215" width="20" height="22"/>
                                                                 <color key="tintColor" systemColor="systemGrayColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="20" id="8Zj-Xk-43q"/>
@@ -793,7 +794,7 @@
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="8" weight="regular"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Participant Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUT-vc-hfu">
-                                                                <rect key="frame" x="28" y="0.0" width="288" height="21"/>
+                                                                <rect key="frame" x="28" y="0.0" width="288" height="22.666666666666668"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -801,10 +802,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jBS-oX-6lC" userLabel="Email Stack View">
-                                                        <rect key="frame" x="0.0" y="29" width="316" height="21"/>
+                                                        <rect key="frame" x="0.0" y="30.666666666666629" width="316" height="22.666666666666671"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ib3-gq-uue">
-                                                                <rect key="frame" x="0.0" y="0.66666666666666607" width="20" height="19.666666666666668"/>
+                                                                <rect key="frame" x="0.0" y="0.66666666666666785" width="20" height="21.333333333333336"/>
                                                                 <color key="tintColor" systemColor="systemGrayColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="20" id="Os0-Op-DY5"/>
@@ -812,7 +813,7 @@
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="8" weight="regular"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="participant@email.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTV-U3-c6z">
-                                                                <rect key="frame" x="28" y="0.0" width="288" height="21"/>
+                                                                <rect key="frame" x="28" y="0.0" width="288" height="22.666666666666668"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -820,10 +821,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="h2M-VH-mfQ" userLabel="Phone Stack View">
-                                                        <rect key="frame" x="0.0" y="58" width="316" height="21"/>
+                                                        <rect key="frame" x="0.0" y="61.333333333333258" width="316" height="23"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6WR-cz-Jc7">
-                                                                <rect key="frame" x="0.0" y="0.66666666666666785" width="20" height="20"/>
+                                                                <rect key="frame" x="0.0" y="0.66666666666666785" width="20" height="22"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" systemColor="systemGrayColor"/>
                                                                 <constraints>
@@ -832,7 +833,7 @@
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="8" weight="regular"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="(555) 123-4567" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVT-N8-6HT">
-                                                                <rect key="frame" x="28" y="0.0" width="288" height="21"/>
+                                                                <rect key="frame" x="28" y="0.0" width="288" height="23"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>

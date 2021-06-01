@@ -11,7 +11,7 @@ enum AppError: Error {
 	case couldNotParseJSON(rawError: Error)
 	case noInternetConnection
 	case invalidURL
-	case badStatusCode
+	case operationCouldNotBeCompleted
 	case noDataReceived
 	case other(rawError: Error)
 }
@@ -19,6 +19,7 @@ enum AppError: Error {
 enum HTTPMethod: String {
 		case get = "GET"
 		case post = "POST"
+		case put = "PUT"
 }
 
 class NetworkHelper {
@@ -46,7 +47,7 @@ class NetworkHelper {
 								}
 
 								guard let response = response as? HTTPURLResponse, (200...299) ~= response.statusCode else {
-										completionHandler(.failure(.badStatusCode))
+									completionHandler(.failure(.operationCouldNotBeCompleted))
 										return
 								}
 

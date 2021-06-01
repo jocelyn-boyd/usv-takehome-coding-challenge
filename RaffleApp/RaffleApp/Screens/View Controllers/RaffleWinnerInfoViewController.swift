@@ -40,7 +40,7 @@ class RaffleWinnerInfoViewController: UIViewController {
 					self?.participantEmailLabel.text = "\(details.email)"
 					self?.participantPhoneNumberLabel.text = details.phone != nil ? "\(String(describing: details.phone))" : "Not Available"
 				case let .failure(error):
-					print(error)
+					print(error.localizedDescription) // There is no winner yet.
 				}
 			}
 		}

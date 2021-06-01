@@ -16,12 +16,11 @@ class DrawRaffleWinnerViewController: UIViewController {
 	
 	var raffle: AllRaffles!
 	var secret_token = String()
-	var winner_id = Int()
 	
-	private var validateTextFields: (String)? {
+	private var secretTokenTextFieldIsFilled: (String)? {
 		guard let secret_token = secretTokenTextField.text, !secret_token.isEmpty else {
 			let alertTitle = "Required"
-			let alertMessage = "Please enter secret token"
+			let alertMessage = "Please input secret token"
 			displayAlert(title: alertTitle, message: alertMessage)
 			return nil
 		}
@@ -32,58 +31,77 @@ class DrawRaffleWinnerViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
+		loadRaffleSecretToken()
 	}
-	
+
 	// MARK: - IBActions
 	
 	@IBAction private func drawRaffleWinnerButton(_ sender: UIButton) {
-		guard let _ = validateTextFields else { return }
+		// 1. Check if secret token textfield is empty
+		guard let _ = secretTokenTextFieldIsFilled else { return }
 		
-		// MARK: - TODO: Draw a random winner from the list if participants
-		// if raffle details winner is nil, then draw random winner
-		// drawRaffleWinnerFromParticipants()
-		// if raffle details winner is NOT nil, then fetch raffle winner
-		 getRaffleWinner()
+		// 2. Check if input matches the secret token created at time of raffle
+		guard secretTokenTextField.text == secret_token else {
+			displayInvalidTokenAlert()
+			return
+		}
+	
+		loadRaffleWinnerFromParticipantList()
 	}
 	
 	// MARK: - Private Methods
+	private func encodeInputTokenFromSecretTokenTextfield() -> Token? {
+		guard let encodedInputToken = secretTokenTextField.text else {
+			return nil
+		}
+		return Token(secret_token: encodedInputToken)
+	}
+
 	
-	private func getRaffleDetails() {
+	// MARK: - Networking Methods
+	
+	private func loadRaffleSecretToken() {
 		RaffleAPIClient.manager.getRaffleDetails(with: raffle.id) { [weak self] result in
 			switch result {
 			case let .success(details):
 				self?.secret_token = details.secret_token
-				self?.winner_id = details.winner_id!
 			case let .failure(error):
 				print(error)
 			}
 		}
 	}
 	
-	private func drawRaffleWinnerFromParticipants() {
-		// MARK: - TODO: write function code
-	}
-	
-	private func getRaffleWinner() {
-		RaffleAPIClient.manager.getRaffleWinnerInfo(with: raffle.id) { [weak self] result in
-			switch result {
-			case .success:
-				if self?.secretTokenTextField.text == self?.secret_token {
-					print("Success! Raffle winner retrived!")
+	private func loadRaffleWinnerFromParticipantList() {
+		guard let token = encodeInputTokenFromSecretTokenTextfield() else {
+			displayInvalidTokenAlert()
+			return
+		}
+		
+		RaffleAPIClient.manager.pickRaffleWinner(with: raffle.id, secret_token: token) { [weak self] result in
+			DispatchQueue.main.async { [self] in
+				switch result {
+				case .success:
+					self?.displaySuccessAlert()
+				case let .failure(error):
+					print(error.localizedDescription)
 				}
-			case let .failure(error):
-				self?.displayTokenValidationFailureAlert(with: error)
 			}
 		}
 	}
 	
-	private func displayTokenValidationFailureAlert(with error: Error) {
-		displayAlert(title: "Error: Could not validate secret token", message: error.localizedDescription)
+
+	// MARK: Alert Methods
+	private func displaySuccessAlert() {
+		let alertVC = UIAlertController(title: "Success! ✅", message: "A winner has been chosen!", preferredStyle: .alert)
+		alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+			self.navigationController?.popToRootViewController(animated: true)
+		}))
+		present(alertVC, animated: true, completion: nil)
+		
 	}
 	
 	private func displayInvalidTokenAlert() {
-		displayAlert(title: "Invalid Token", message: "Please enter valid token")
+		displayAlert(title: "Invalid Token ❌", message: "Please enter valid token")
 	}
 	
 	private func displayAlert(title: String, message: String) {

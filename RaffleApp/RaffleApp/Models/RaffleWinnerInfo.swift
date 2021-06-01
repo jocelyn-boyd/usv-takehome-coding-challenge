@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RaffleWinner: Codable {
+struct RaffleWinnerInfo: Codable {
 	let participant_id: Int
 	let raffle_id: Int
 	let first_name: String
@@ -41,9 +41,9 @@ struct RaffleWinner: Codable {
 		return "\(formattedDate)"
 	}
 	
-	static func getRaffleWinner(from jsonData: Data) throws -> RaffleWinner {
+	static func getRaffleWinner(from jsonData: Data) throws -> RaffleWinnerInfo {
 		do {
-			let winner = try JSONDecoder().decode(RaffleWinner.self, from: jsonData)
+			let winner = try JSONDecoder().decode(RaffleWinnerInfo.self, from: jsonData)
 			return winner
 		} catch {
 			throw JSONError.decodingError(error)

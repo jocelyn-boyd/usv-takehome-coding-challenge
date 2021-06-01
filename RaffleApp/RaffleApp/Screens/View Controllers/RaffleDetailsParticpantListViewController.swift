@@ -7,20 +7,24 @@
 
 import UIKit
 
-class RaffleDetailViewController: UIViewController {
+class RaffleDetailsParticpantListViewController: UIViewController {
 	// MARK: - IBOutlets
 	
 	@IBOutlet private var allParticipantsTableView: UITableView!
-	@IBOutlet weak var participantCountLabel: UILabel!
-	@IBOutlet weak var registrationButton: UIButton!
-	@IBOutlet weak var drawWinnerButton: UIButton!
+	@IBOutlet private weak var participantCountLabel: UILabel!
+	@IBOutlet private weak var registrationButton: UIButton!
+	@IBOutlet private weak var drawWinnerButton: UIButton!
+	@IBOutlet private weak var winnerInfo: UIButton!
 	
 	// MARK: - Internal Properties
 	
 	var raffle: AllRaffles!
+	var winner = Int()
 	var participantList = [RegisteredParticipant]() {
 		didSet {
 			allParticipantsTableView.reloadData()
+			loadTotalNumberOfParticipants()
+			configureButtons()
 		}
 	}
 	
@@ -31,9 +35,14 @@ class RaffleDetailViewController: UIViewController {
 		// Do any additional setup after loading the view.
 		setTableViewDelegatesAndDataSource()
 		setNavigationTitleToRaffleName()
-		loadAllRaffleParticipants()
-		loadTotalNumberOfParticipants()
 	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		loadAllRaffleParticipants()
+		configureButtons()
+	}
+	
 		
 	// MARK: - Private Methods
 	
@@ -44,13 +53,23 @@ class RaffleDetailViewController: UIViewController {
 	
 	private func setNavigationTitleToRaffleName() {
 		navigationItem.title = "\(raffle.name)"
-		
+	}
+	
+	private func configureButtons() {
+		if raffle.winner_id != nil { //there is a winner
+			registrationButton.isHidden = true
+			drawWinnerButton.isHidden = true
+			winnerInfo.isHidden = false
+		}
+		else if raffle.winner_id == nil { //there is no winner
+			registrationButton.isHidden = false
+			drawWinnerButton.isHidden = false
+			winnerInfo.isHidden = true
+		}
 	}
 	
 	private func loadTotalNumberOfParticipants() {
-		// MARK: - BUG: load the total number of raffle participants
-		// participantCountLabel.text = "Total Participants: \(participantList.count)"
-		// print(participantList.count)
+		 participantCountLabel.text = "Total Participants: \(participantList.count)"
 	}
 	
 	private func loadAllRaffleParticipants() {
@@ -101,7 +120,7 @@ class RaffleDetailViewController: UIViewController {
 
 // MARK: - TableView Data Source & Delegate Extensions
 
-extension RaffleDetailViewController: UITableViewDataSource, UITableViewDelegate {
+extension RaffleDetailsParticpantListViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return participantList.count
 	}

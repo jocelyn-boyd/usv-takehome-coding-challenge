@@ -36,7 +36,6 @@ class RegisterNewParticipantViewController: UIViewController {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 	
 	// MARK: - IBActions
@@ -91,7 +90,13 @@ class RegisterNewParticipantViewController: UIViewController {
 	}
 	
 	private func displayRegistrationSuccessAlert() {
-		displayAlert(title: "Success!", message: "You are registered! ✅")
+		let alertVC = UIAlertController(title: "Success✅!",
+																		message: "\(String(describing: firstNameTextField.text!)) is registered for \(raffle.name)!",
+																		preferredStyle: .alert)
+		alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+			self.navigationController?.popViewController(animated: true)
+		}))
+		present(alertVC, animated: true, completion: nil)
 	}
 	
 	private func displayRegistrationFailureAlert(with error: Error) {

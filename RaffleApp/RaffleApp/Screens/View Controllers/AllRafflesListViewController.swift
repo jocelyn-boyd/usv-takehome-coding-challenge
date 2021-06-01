@@ -27,8 +27,8 @@ class AllRafflesListViewController: UIViewController {
 		configureTableView()
 	}
 	
-	// when the modal is dismissed, reload the data
 	override func viewWillAppear(_ animated: Bool) {
+		// refreshes tableview data
 		super.viewWillAppear(animated)
 		loadAllRafflesData()
 	}
@@ -45,7 +45,7 @@ class AllRafflesListViewController: UIViewController {
 			DispatchQueue.main.async { [weak self] in
 				switch result {
 				case let .success(raffles):
-					self?.allRaffles = raffles.sorted() { $0.id < $1.id }
+					self?.allRaffles = raffles.sorted() { $0.id > $1.id }
 				case let .failure(error):
 					print(error.localizedDescription)
 				}
@@ -84,13 +84,9 @@ extension AllRafflesListViewController: UITableViewDelegate, UITableViewDataSour
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		// MARK: - TODO: Change view background color depending on open or closed status of raffle
-		// If raffle is open and there is no winner, raffleView is green
-		// If raffle is closed and there is a winner, raffleView is grayed out
-		
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "RaffleCell", for: indexPath) as? RaffleCell else { return UITableViewCell() }
 		let raffle = allRaffles[indexPath.row]
-		cell.raffleTitleLabel.text = "\(raffle.name) - ID#: \(raffle.id)"
+		cell.raffleTitleLabel.text = "\(raffle.name)"
 		cell.dateCreatedLabel.text = "Created: \(String(describing: raffle.dateCreated))"
 		cell.winnerIdLabel.text = raffle.winner_id != nil ? "Winner Id: \(String(describing: raffle.winner_id!)) 🎉" : "No winner yet!"
 		cell.dateOfRaffleLabel.text = raffle.raffled_at != nil ? "Closed: \(String(describing: raffle.dateRaffled!))" : "Click on raffle to register!"

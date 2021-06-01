@@ -65,11 +65,11 @@ class CreateRaffleViewController: UIViewController {
 					let secretToken = secretTokenTextField.text else {
 			return nil
 		}
-		return NewRaffle(name: raffleName, secretToken: secretToken)
+		return NewRaffle(name: raffleName, secret_token: secretToken)
 	}
 	
 	private func displayPostSuccessfulAlert() {
-		let alertVC = UIAlertController(title: "Success!", message: "\(raffleNameTextField.text!) posted!", preferredStyle: .alert)
+		let alertVC = UIAlertController(title: "Success!", message: "\(raffleNameTextField.text!) raffle posted!", preferredStyle: .alert)
 		alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
 			self.navigationController?.popToRootViewController(animated: true)
 		}))

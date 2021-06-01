@@ -50,6 +50,7 @@ class DrawRaffleWinnerViewController: UIViewController {
 	}
 	
 	// MARK: - Private Methods
+	
 	private func encodeInputTokenFromSecretTokenTextfield() -> Token? {
 		guard let encodedInputToken = secretTokenTextField.text else {
 			return nil
@@ -77,7 +78,7 @@ class DrawRaffleWinnerViewController: UIViewController {
 			return
 		}
 		
-		RaffleAPIClient.manager.pickRaffleWinner(with: raffle.id, secret_token: token) { [weak self] result in
+		RaffleAPIClient.manager.putSecretTokenToGetRaffleWinner(with: raffle.id, secret_token: token) { [weak self] result in
 			DispatchQueue.main.async { [self] in
 				switch result {
 				case .success:
@@ -89,7 +90,6 @@ class DrawRaffleWinnerViewController: UIViewController {
 		}
 	}
 	
-
 	// MARK: Alert Methods
 	private func displaySuccessAlert() {
 		let alertVC = UIAlertController(title: "Success! ✅", message: "A winner has been chosen!", preferredStyle: .alert)

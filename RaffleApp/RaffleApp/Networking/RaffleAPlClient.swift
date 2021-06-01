@@ -167,8 +167,7 @@ struct RaffleAPIClient {
 	}
 	
 	// MARK: PUT Requests
-	// MARK: - TODO: Pick a winner from the participants at random for a raffle
-	func pickRaffleWinner(with raffle_id: Int, secret_token: Token, completionHandler: @escaping (Result<Data, AppError>) -> Void) {
+	func putSecretTokenToGetRaffleWinner(with raffle_id: Int, secret_token: Token, completionHandler: @escaping (Result<Data, AppError>) -> Void) {
 		guard let encodedSecretTokenData = try? JSONEncoder().encode(secret_token) else {
 			fatalError("Unable to json encode project")
 		}

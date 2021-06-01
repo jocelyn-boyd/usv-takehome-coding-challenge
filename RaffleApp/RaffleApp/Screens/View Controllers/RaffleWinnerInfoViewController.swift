@@ -29,6 +29,7 @@ class RaffleWinnerInfoViewController: UIViewController {
 	}
 	
 	// MARK: Private Methods
+	
 	func loadWinnerInformation() {
 		RaffleAPIClient.manager.getRaffleWinnerInfo(with: raffles.id) { [weak self] result in
 			DispatchQueue.main.async {

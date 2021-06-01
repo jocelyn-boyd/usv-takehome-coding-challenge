@@ -9,13 +9,8 @@ import Foundation
 
 struct NewRaffle: Encodable {
 	let name: String
-	let secretToken: String
-	
-	private enum CodingKeys: String, CodingKey {
-		case name
-		case secretToken = "secret_token"
-	}
-	
+	let secret_token: String
+		
 	static func randomString(length: Int) -> String {
 		let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 		return String((0..<length).map{ _ in letters.randomElement()! })

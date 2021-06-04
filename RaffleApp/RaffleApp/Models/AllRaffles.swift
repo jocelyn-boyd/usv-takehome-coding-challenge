@@ -1,10 +1,3 @@
-//
-//  Raffle.swift
-//  RaffleApp
-//
-//  Created by Jocelyn Boyd on 5/28/21.
-//
-
 import UIKit
 
 enum JSONError: Error {
@@ -57,4 +50,3 @@ struct AllRaffles: Codable {
 		}
 	}
 }
-

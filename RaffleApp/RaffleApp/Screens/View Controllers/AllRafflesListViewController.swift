@@ -88,8 +88,18 @@ extension AllRafflesListViewController: UITableViewDelegate, UITableViewDataSour
 		let raffle = allRaffles[indexPath.row]
 		cell.raffleTitleLabel.text = "\(raffle.name)"
 		cell.dateCreatedLabel.text = "Created: \(String(describing: raffle.dateCreated))"
-		cell.winnerIdLabel.text = raffle.winner_id != nil ? "Winner Id: \(String(describing: raffle.winner_id!)) 🎉" : "No winner yet!"
-		cell.dateOfRaffleLabel.text = raffle.raffled_at != nil ? "Closed: \(String(describing: raffle.dateRaffled!))" : "Click on raffle to register!"
+
+		if raffle.raffled_at != nil {
+			cell.winnerIdLabel.text = "Winner Id: \(String(describing: raffle.winner_id!)) 🎉"
+			cell.raffleWinnerImage.image = UIImage(systemName: "person.fill.checkmark")
+			cell.dateOfRaffleLabel.text = "Closed: \(String(describing: raffle.dateRaffled!))"
+			cell.closedRaffleImage.image = UIImage(systemName: "checkmark.seal.fill")
+		} else {
+			cell.winnerIdLabel.text = "No winner yet!"
+			cell.raffleWinnerImage.image = UIImage(systemName: "person.fill.xmark")
+			cell.dateOfRaffleLabel.text = "Click on raffle to register!"
+			cell.closedRaffleImage.image = UIImage(systemName: "rectangle.and.pencil.and.ellipsis")
+		}
 		return cell
 	}
 }

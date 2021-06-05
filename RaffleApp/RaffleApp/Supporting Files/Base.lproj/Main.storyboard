@@ -125,10 +125,13 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="closedRaffleImage" destination="IXB-Wp-cBa" id="eNr-zf-L77"/>
                                             <outlet property="dateCreatedLabel" destination="t1E-Mn-eHs" id="K0W-L6-zJE"/>
                                             <outlet property="dateOfRaffleLabel" destination="mB8-hd-h5Y" id="bDC-Mz-CvF"/>
+                                            <outlet property="raffleCellBackgroundView" destination="T3a-mX-cyy" id="sZY-lf-XYw"/>
                                             <outlet property="raffleTitleLabel" destination="Uif-LF-EyQ" id="oBb-pC-ZJ1"/>
                                             <outlet property="raffleView" destination="T3a-mX-cyy" id="Qt7-Vk-Dw7"/>
+                                            <outlet property="raffleWinnerImage" destination="5zt-bD-Tgm" id="bjy-E1-UrF"/>
                                             <outlet property="winnerIdLabel" destination="MbW-rd-ORE" id="bPL-UF-2FT"/>
                                             <segue destination="1pZ-wz-Fd3" kind="show" identifier="raffleDetailSegue" id="prl-sg-ovP"/>
                                         </connections>
@@ -276,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bR2-pJ-YS2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3040" y="-300"/>
+            <point key="canvasLocation" x="2672" y="-517"/>
         </scene>
         <!--Raffle Name-->
         <scene sceneID="K8T-i2-yj1">
@@ -480,12 +483,12 @@
                         <outlet property="drawWinnerButton" destination="TqT-P3-V54" id="QsX-mz-qmR"/>
                         <outlet property="participantCountLabel" destination="dc5-gN-nbZ" id="kYZ-F5-oRZ"/>
                         <outlet property="registrationButton" destination="w1h-qi-G95" id="IWe-Be-bja"/>
-                        <outlet property="winnerInfo" destination="f6F-bp-nOl" id="1Ul-QJ-Fws"/>
+                        <outlet property="winnerInfoButton" destination="f6F-bp-nOl" id="1Ul-QJ-Fws"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ukB-NP-uQj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3040" y="372.51184834123222"/>
+            <point key="canvasLocation" x="2477" y="341"/>
         </scene>
         <!--Draw Raffle Winner View Controller-->
         <scene sceneID="hEj-Zo-nDR">
@@ -557,7 +560,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="joi-E1-2fG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="4CZ-iX-fzc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4649" y="621"/>
+            <point key="canvasLocation" x="3977" y="341"/>
         </scene>
         <!--Register New Participant View Controller-->
         <scene sceneID="IX3-iD-O06">
@@ -738,7 +741,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kys-zi-bOj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4114" y="-25"/>
+            <point key="canvasLocation" x="3977" y="-400"/>
         </scene>
         <!--Raffle Winner Info View Controller-->
         <scene sceneID="HCI-bs-qko">
@@ -884,7 +887,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvT-zZ-he4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3755" y="1164"/>
+            <point key="canvasLocation" x="3977" y="1117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PZd-nu-riT">

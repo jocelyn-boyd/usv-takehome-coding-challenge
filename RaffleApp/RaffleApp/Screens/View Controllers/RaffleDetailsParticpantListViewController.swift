@@ -14,7 +14,7 @@ class RaffleDetailsParticpantListViewController: UIViewController {
 	@IBOutlet private weak var participantCountLabel: UILabel!
 	@IBOutlet private weak var registrationButton: UIButton!
 	@IBOutlet private weak var drawWinnerButton: UIButton!
-	@IBOutlet private weak var winnerInfo: UIButton!
+	@IBOutlet private weak var winnerInfoButton: UIButton!
 	
 	// MARK: - Internal Properties
 	
@@ -56,15 +56,31 @@ class RaffleDetailsParticpantListViewController: UIViewController {
 	}
 	
 	private func configureButtons() {
-		if raffle.winner_id != nil { //there is a winner
-			registrationButton.isHidden = true
+		// MARK: - NOTE: Limit the number of participants for each raffle
+		
+		// if there is no winner and no participants
+		if raffle.winner_id == nil && participantList.count == 0 {
+			registrationButton.isHidden = false
 			drawWinnerButton.isHidden = true
-			winnerInfo.isHidden = false
+			winnerInfoButton.isHidden = true
 		}
-		else if raffle.winner_id == nil { //there is no winner
+		// there is no winner and less than 2 participants
+		else if raffle.winner_id == nil && participantList.count < 2 {
+			registrationButton.isHidden = false
+			drawWinnerButton.isHidden = true
+			winnerInfoButton.isHidden = true
+		}
+		// there is no winner and 2 or more participants
+		else if raffle.winner_id == nil && participantList.count > 2 {
 			registrationButton.isHidden = false
 			drawWinnerButton.isHidden = false
-			winnerInfo.isHidden = true
+			winnerInfoButton.isHidden = true
+		}
+		// there is a winner
+		else if raffle.winner_id != nil {
+			registrationButton.isHidden = true
+			drawWinnerButton.isHidden = true
+			winnerInfoButton.isHidden = false
 		}
 	}
 	
@@ -93,6 +109,7 @@ class RaffleDetailsParticpantListViewController: UIViewController {
 	}
 	
 	// MARK: - Segue Methods
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		guard let segueIdentifier = segue.identifier else { fatalError("No identifier on segue") }
 		switch segueIdentifier {

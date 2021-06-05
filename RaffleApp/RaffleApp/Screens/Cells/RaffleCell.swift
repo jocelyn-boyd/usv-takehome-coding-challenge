@@ -14,6 +14,13 @@ class RaffleCell: UITableViewCell {
 	@IBOutlet weak var dateCreatedLabel: UILabel!
 	@IBOutlet weak var winnerIdLabel: UILabel!
 	@IBOutlet weak var dateOfRaffleLabel: UILabel!
+	
+	
+	@IBOutlet weak var raffleWinnerImage: UIImageView!
+	@IBOutlet weak var closedRaffleImage: UIImageView!
+	@IBOutlet weak var raffleCellBackgroundView: UIView!
+	
+	
 
     override func awakeFromNib() {
         super.awakeFromNib()

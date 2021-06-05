@@ -79,6 +79,11 @@ class RegisterNewParticipantViewController: UIViewController {
 	
 	// MARK: - Private Methods
 	
+	// load all raffles
+	// get the raffle id
+	// using the raffle id
+	// get all the participants
+	
 	private func registerParticipantFromFields() -> NewParticipant? {
 		guard let firstName = firstNameTextField.text,
 					let lastName = lastNameTextField.text,

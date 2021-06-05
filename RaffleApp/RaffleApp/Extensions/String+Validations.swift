@@ -14,4 +14,12 @@ extension String {
     let emailPredicate = NSPredicate(format:"SELF MATCHES %@", validEmailRegEx)
     return emailPredicate.evaluate(with: self)
   }
+	
+	var isEmailUnique: Bool {
+		// check if the email has been already used
+		// prevent raffle from being submitted
+
+		return true
+	}
+	
 }

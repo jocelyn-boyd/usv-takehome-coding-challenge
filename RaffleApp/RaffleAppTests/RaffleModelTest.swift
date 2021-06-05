@@ -37,10 +37,10 @@ class RaffleModelTest: XCTestCase {
 	
 	func testLoadAllRaffles() {
 		let raffleData = getAllRafflesJSONData()
-		var sampleRaffles = [Raffle]()
+		var sampleRaffles = [AllRaffles]()
 		
 		do {
-			sampleRaffles = try Raffle.getAllRaffles(from: raffleData)
+			sampleRaffles = try AllRaffles.getAllRaffles(from: raffleData)
 		} catch {
 			print(error)
 		}
@@ -97,11 +97,11 @@ class RaffleModelTest: XCTestCase {
 	
 	func testLoadRaffleWinner() {
 		let winnerData = getRaffleWinnerJSONData()
-		let sampleRaffleWinner: RaffleWinner
+		let sampleRaffleWinner: RaffleWinnerInfo
 		
 		
 		do {
-			sampleRaffleWinner = try RaffleWinner.getRaffleWinner(from: winnerData)
+			sampleRaffleWinner = try RaffleWinnerInfo.getRaffleWinner(from: winnerData)
 		} catch {
 			print(error)
 		}

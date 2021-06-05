@@ -47,13 +47,16 @@ class CreateRaffleViewController: UIViewController {
 			displayInvalidRaffleAlert()
 			return
 		}
+		// MARK: TODO - Create a check for already registered emails in the API
 	
 		RaffleAPIClient.manager.postNewRaffle(raffle) { [weak self] result in
-			switch result {
-			case .success:
-				self?.displayPostSuccessfulAlert()
-			case let .failure(error):
-				self?.displayPostFailureAlert(with: error)
+			DispatchQueue.main.async {
+				switch result {
+				case .success:
+					self?.displayPostSuccessfulAlert()
+				case let .failure(error):
+					self?.displayPostFailureAlert(with: error)
+				}
 			}
 		}
 	}

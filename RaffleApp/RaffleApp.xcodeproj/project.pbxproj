@@ -100,6 +100,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		087F545A266BC0D40097B956 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0882F02426618ED80070EF3F /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		087F545B266BC0FB0097B956 /* SampleJSON */ = {
+			isa = PBXGroup;
+			children = (
+				0882F05F2663E6E10070EF3F /* AllRafflesSample.json */,
+				0882F06F26645F0C0070EF3F /* RaffleParticipantSample.json */,
+				089E7CFC2664A2B10078DCD9 /* RaffleWinnerSample.json */,
+			);
+			path = SampleJSON;
+			sourceTree = "<group>";
+		};
 		0882F01226618ED80070EF3F = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +142,7 @@
 				0882F06A266438A60070EF3F /* Extensions */,
 				0882F0552662FD880070EF3F /* Supporting Files */,
 				0882F065266415340070EF3F /* Networking */,
+				087F545A266BC0D40097B956 /* Views */,
 				0882F0562662FDB70070EF3F /* Models */,
 				0882F0542662FD7E0070EF3F /* Screens */,
 				0882F02C26618ED90070EF3F /* Info.plist */,
@@ -155,12 +174,9 @@
 			children = (
 				0882F01E26618ED80070EF3F /* AppDelegate.swift */,
 				0882F02026618ED80070EF3F /* SceneDelegate.swift */,
-				0882F02426618ED80070EF3F /* Main.storyboard */,
 				0882F02926618ED90070EF3F /* LaunchScreen.storyboard */,
 				0882F02726618ED90070EF3F /* Assets.xcassets */,
-				0882F05F2663E6E10070EF3F /* AllRafflesSample.json */,
-				0882F06F26645F0C0070EF3F /* RaffleParticipantSample.json */,
-				089E7CFC2664A2B10078DCD9 /* RaffleWinnerSample.json */,
+				087F545B266BC0FB0097B956 /* SampleJSON */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";

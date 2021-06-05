@@ -96,15 +96,15 @@ class RaffleModelTest: XCTestCase {
 	}
 	
 	func testLoadRaffleWinner() {
-		let winnerData = getRaffleWinnerJSONData()
-		let sampleRaffleWinner: RaffleWinnerInfo
-		
-		
-		do {
-			sampleRaffleWinner = try RaffleWinnerInfo.getRaffleWinner(from: winnerData)
-		} catch {
-			print(error)
-		}
+//		let winnerData = getRaffleWinnerJSONData()
+//		let sampleRaffleWinner: RaffleWinnerInfo
+//		
+//		
+//		do {
+//			sampleRaffleWinner = try RaffleWinnerInfo.getRaffleWinner(from: winnerData)
+//		} catch {
+//			print(error)
+//		}
 		// MARK: - Bug: Fix XCTAssertTrue statement
 //		XCTAssertTrue(!sampleRaffleWinner.isEmpty , "The winner is \(sampleRaffleWinner.first_name).")
 	}

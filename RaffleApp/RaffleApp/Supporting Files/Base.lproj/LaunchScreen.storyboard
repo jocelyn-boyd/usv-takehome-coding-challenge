@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottomRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="raffle-ticket" translatesAutoresizingMaskIntoConstraints="NO" id="FhS-gx-dhX">
-                                <rect key="frame" x="0.0" y="274" width="414" height="358"/>
+                                <rect key="frame" x="0.0" y="229" width="414" height="448"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
@@ -25,7 +25,7 @@
                         <constraints>
                             <constraint firstItem="FhS-gx-dhX" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="2Fu-vX-QRu"/>
                             <constraint firstItem="FhS-gx-dhX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CEH-ej-HsS"/>
-                            <constraint firstItem="FhS-gx-dhX" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.4" id="apA-UE-bmT"/>
+                            <constraint firstItem="FhS-gx-dhX" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.5" id="apA-UE-bmT"/>
                             <constraint firstItem="FhS-gx-dhX" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="nPW-hv-den"/>
                         </constraints>
                     </view>

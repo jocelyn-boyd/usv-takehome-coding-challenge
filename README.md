@@ -7,4 +7,4 @@ Create a client for a Raffle application. Users are able to:
 * [X] Create raffles
 * [X] List all raffles
 * [X] Add participants users to raffles
-* [X] Draw a winner from a raffle, etc.
+* [X] Draw a winner from a raffle

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 struct RaffleAPIClient {
 	
 	// MARK: - Static Properties
@@ -14,6 +15,7 @@ struct RaffleAPIClient {
 	
 	// MARK: - Private Properties and Initializers
 	private let rootEndpoint = "https://raffle-fs-app.herokuapp.com"
+	public let allRaffles = CurrentValueSubject<Result<[AllRaffles], AppError>?,Never>(nil)
 	
 	
 	var raffleURL: URL {
@@ -24,6 +26,12 @@ struct RaffleAPIClient {
 	}
 	
 	private init() {}
+	
+	func refreshAllRaffles() {
+		getAllRaffles { result in
+			allRaffles.value = result
+		}
+	}
 	
 	// MARK: - GET Requests
 	

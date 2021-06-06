@@ -14,6 +14,4 @@ extension String {
     let emailPredicate = NSPredicate(format:"SELF MATCHES %@", validEmailRegEx)
     return emailPredicate.evaluate(with: self)
   }
-	
-	// MARK: TODO - Create an extension on string to turn into Date data type, then back to string with a formatted string date
 }

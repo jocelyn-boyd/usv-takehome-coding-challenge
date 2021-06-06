@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class AllRafflesListViewController: UIViewController {
 	// MARK: - IBOutlets
@@ -17,40 +18,50 @@ class AllRafflesListViewController: UIViewController {
 	var allRaffles = [AllRaffles]() {
 		didSet {
 			allRafflesTableView.reloadData()
+			navigationItem.title = "All Raffles (\(allRaffles.count))"
 		}
 	}
+	private var refreshControl: UIRefreshControl!
+	private var allRafflesSubscription: AnyCancellable?
 	
 	// MARK: - Lifecycle Methods
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configureTableView()
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		// refreshes tableview data
-		super.viewWillAppear(animated)
+		subscribeToAllRaffles()
 		loadAllRafflesData()
+		
 	}
 	
 	// MARK: - Private Methods
 	
 	private func configureTableView() {
+		refreshControl = UIRefreshControl()
+		refreshControl.addTarget(self, action: #selector(loadAllRafflesData), for: .valueChanged)
+		allRafflesTableView.refreshControl = refreshControl
 		allRafflesTableView.delegate = self
 		allRafflesTableView.dataSource = self
 	}
 	
-	private func loadAllRafflesData() {
-		RaffleAPIClient.manager.getAllRaffles { result in
-			DispatchQueue.main.async { [weak self] in
-				switch result {
-				case let .success(raffles):
-					self?.allRaffles = raffles.sorted() { $0.id > $1.id }
-				case let .failure(error):
-					print(error.localizedDescription)
-				}
+	private func subscribeToAllRaffles() {
+		allRafflesSubscription = RaffleAPIClient.manager.allRaffles.receive(on: DispatchQueue.main).sink { [weak self] result in
+			switch result {
+			case let .success(raffles):
+				self?.allRaffles = raffles.sorted() {$0.dateCreated > $1.created_at }//.filter { $0.winner_id != nil }
+			case let .failure(error):
+				print(error.localizedDescription)
+			case nil:
+				break
 			}
+			self?.refreshControl.endRefreshing()
 		}
+	}
+	
+	// MARK: - @objc Private Methods
+	
+	@objc private func loadAllRafflesData() {
+		RaffleAPIClient.manager.refreshAllRaffles()
 	}
 	
 	// MARK: - Segue Methods
@@ -86,20 +97,7 @@ extension AllRafflesListViewController: UITableViewDelegate, UITableViewDataSour
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "RaffleCell", for: indexPath) as? RaffleCell else { return UITableViewCell() }
 		let raffle = allRaffles[indexPath.row]
-		cell.raffleTitleLabel.text = "\(raffle.name)"
-		cell.dateCreatedLabel.text = "Created: \(String(describing: raffle.dateCreated))"
-
-		if raffle.raffled_at != nil {
-			cell.winnerIdLabel.text = "Winner Id: \(String(describing: raffle.winner_id!)) 🎉"
-			cell.raffleWinnerImage.image = UIImage(systemName: "person.fill.checkmark")
-			cell.dateOfRaffleLabel.text = "Closed: \(String(describing: raffle.dateRaffled!))"
-			cell.closedRaffleImage.image = UIImage(systemName: "checkmark.seal.fill")
-		} else {
-			cell.winnerIdLabel.text = "No winner yet!"
-			cell.raffleWinnerImage.image = UIImage(systemName: "person.fill.xmark")
-			cell.dateOfRaffleLabel.text = "Click on raffle to register!"
-			cell.closedRaffleImage.image = UIImage(systemName: "rectangle.and.pencil.and.ellipsis")
-		}
+		cell.configureRaffleCell(with: raffle)
 		return cell
 	}
 }

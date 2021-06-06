@@ -54,6 +54,7 @@ class CreateRaffleViewController: UIViewController {
 				switch result {
 				case .success:
 					self?.displayPostSuccessfulAlert()
+					RaffleAPIClient.manager.refreshAllRaffles()
 				case let .failure(error):
 					self?.displayPostFailureAlert(with: error)
 				}

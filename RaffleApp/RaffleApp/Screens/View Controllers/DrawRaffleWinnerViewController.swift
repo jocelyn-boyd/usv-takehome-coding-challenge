@@ -83,6 +83,7 @@ class DrawRaffleWinnerViewController: UIViewController {
 				switch result {
 				case .success:
 					self?.displaySuccessAlert()
+					RaffleAPIClient.manager.refreshAllRaffles()
 				case let .failure(error):
 					print(error.localizedDescription)
 				}

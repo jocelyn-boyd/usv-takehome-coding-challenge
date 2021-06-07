@@ -71,7 +71,7 @@ class CreateRaffleViewController: UIViewController {
 	}
 	
 	private func displayPostSuccessAlert() {
-		let alertVC = UIAlertController(title: "Success!", message: "\(raffleNameTextField.text!) raffle posted!", preferredStyle: .alert)
+		let alertVC = UIAlertController(title: "Success! ✅", message: "\(raffleNameTextField.text!) raffle posted!", preferredStyle: .alert)
 		alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
 			self.navigationController?.popToRootViewController(animated: true)
 		}))
@@ -79,7 +79,7 @@ class CreateRaffleViewController: UIViewController {
 	}
 	
 	private func displayPostFailureAlert(with error: Error) {
-		displayAlert(title: "Error posting new Raffle", message: error.localizedDescription)
+		displayAlert(title: "Error posting new Raffle ❌", message: error.localizedDescription)
 	}
 	
 	private func displayInvalidRaffleAlert() {

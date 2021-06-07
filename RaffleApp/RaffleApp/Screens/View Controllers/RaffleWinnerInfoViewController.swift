@@ -9,7 +9,7 @@ import UIKit
 
 class RaffleWinnerInfoViewController: UIViewController {
 	
-	// MARK: - IBOutlers
+	// MARK: - IBOutlets
 	
 	@IBOutlet weak var participantNameLabel: UILabel!
 	@IBOutlet weak var dateRegisteredLabel: UILabel!

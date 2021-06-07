@@ -101,7 +101,7 @@ class RegisterNewParticipantViewController: UIViewController {
 	}
 	
 	private func displayRegistrationFailureAlert(with error: Error) {
-		displayAlert(title: "Error: Unable Complete Registration", message: error.localizedDescription)
+		displayAlert(title: "Error: Unable Complete Registration ❌", message: error.localizedDescription)
 	}
 	
 	private func displayIncompleteRegistrationAlert() {

@@ -32,26 +32,27 @@ class RegisterNewParticipantViewController: UIViewController {
 		return (firstName, lastName, email)
 	}
 	
-	// MARK: Lifecycle Methods
+	// MARK: - Lifecycle Methods
 	
 	override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+		super.viewDidLoad()
+	}
 	
 	// MARK: - IBActions
 	
 	@IBAction private func submitFormButton(_ sender: UIButton) {
-	guard let validCredentials = validateTextFields else { return }
+		guard let validCredentials = validateTextFields else { return }
 		
 		guard validCredentials.email.isValidEmail else {
-				let alertTitle = "Error"
-				let alertMessage = "Please enter a valid email"
-				displayAlert(title: alertTitle, message: alertMessage)
-				return
+			let alertTitle = "Error"
+			let alertMessage = "Please enter a valid email"
+			displayAlert(title: alertTitle, message: alertMessage)
+			return
 		}
 		
-		// MARK: - TODO: Check if email has ever been used, and create an "email already registered" alert
-		// Users are only allowed to enter one raffle at a time, because the database has a UNIQUE constraint in the email field. Meaning no two users with the same email can be created. This makes it impossible for the same user say “alejo@email.com” be signed up for two raffles. You can use this as a talking point for the technical discussion as a limitation of the API and how you structure the database differently if you were creating the database/api say with fireabse to allow a user to sign up for multiple raffles.
+		// MARK: - TODO
+		// Check if email has ever been used, and create an "email already registered" alert
+		// Note about API: Users are only allowed to enter one raffle at a time, because the database has a UNIQUE constraint in the email field. Meaning no two users with the same email can be created. This makes it impossible for the same user say “alejo@email.com” be signed up for two raffles. You can use this as a talking point for the technical discussion as a limitation of the API and how you structure the database differently if you were creating the database/api say with fireabse to allow a user to sign up for multiple raffles.
 		
 		guard let participant = registerParticipantFromFields() else {
 			displayIncompleteRegistrationAlert()

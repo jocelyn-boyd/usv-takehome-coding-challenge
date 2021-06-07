@@ -11,14 +11,14 @@ import Combine
 class AllRafflesListViewController: UIViewController {
 	// MARK: - IBOutlets
 	
-	@IBOutlet private var allRafflesTableView: UITableView!
+	@IBOutlet private weak var allRafflesTableView: UITableView!
 	
 	// MARK: - Properties
 	
-	var allRaffles = [AllRaffles]() {
+	private var allRaffles = [AllRaffles]() {
 		didSet {
 			allRafflesTableView.reloadData()
-			navigationItem.title = "All Raffles (\(allRaffles.count))"
+			navigationItem.title = "All Raffles"
 		}
 	}
 	private var refreshControl: UIRefreshControl?
@@ -29,26 +29,29 @@ class AllRafflesListViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configureTableView()
+		refreshTableView()
 		subscribeToAllRaffles()
 		loadAllRafflesData()
-		
 	}
 	
 	// MARK: - Private Methods
 	
 	private func configureTableView() {
+		allRafflesTableView.delegate = self
+		allRafflesTableView.dataSource = self
+	}
+	
+	private func refreshTableView() {
 		refreshControl = UIRefreshControl()
 		refreshControl?.addTarget(self, action: #selector(loadAllRafflesData), for: .valueChanged)
 		allRafflesTableView.refreshControl = refreshControl
-		allRafflesTableView.delegate = self
-		allRafflesTableView.dataSource = self
 	}
 	
 	private func subscribeToAllRaffles() {
 		allRafflesSubscription = RaffleAPIClient.manager.allRaffles.receive(on: DispatchQueue.main).sink { [weak self] result in
 			switch result {
-			case let .success(raffles):
-				self?.allRaffles = raffles.sorted() {$0.dateCreated > $1.created_at }//.filter { $0.winner_id != nil }
+			case let .success(raffles):	// sorted in newest to oldest
+				self?.allRaffles = raffles.sorted {$0.created_at > $1.created_at}
 			case let .failure(error):
 				print(error.localizedDescription)
 			case nil:
@@ -70,7 +73,7 @@ class AllRafflesListViewController: UIViewController {
 		guard let segueIdentifier = segue.identifier else { fatalError("No identifier on segue") }
 		switch segueIdentifier {
 		case "raffleDetailSegue":
-			guard let raffleDetailVC = segue.destination as? RaffleDetailsParticpantListViewController else {
+			guard let raffleDetailVC = segue.destination as? RaffleDetailsViewController else {
 				fatalError("Unexpected segue VC")
 			}
 			guard let selectedIndexPath = allRafflesTableView.indexPathForSelectedRow else {

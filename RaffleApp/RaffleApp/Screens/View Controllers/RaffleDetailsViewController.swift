@@ -7,24 +7,24 @@
 
 import UIKit
 
-class RaffleDetailsParticpantListViewController: UIViewController {
+class RaffleDetailsViewController: UIViewController {
 	// MARK: - IBOutlets
 	
-	@IBOutlet private var allParticipantsTableView: UITableView!
+	@IBOutlet private weak var allParticipantsTableView: UITableView!
 	@IBOutlet private weak var participantCountLabel: UILabel!
 	@IBOutlet private weak var registrationButton: UIButton!
 	@IBOutlet private weak var drawWinnerButton: UIButton!
 	@IBOutlet private weak var winnerInfoButton: UIButton!
 	
-	// MARK: - Internal Properties
+	// MARK: - Properties
 	
 	var raffle: AllRaffles!
-	var winner = Int()
-	var participantList = [RegisteredParticipant]() {
+	private var winner = Int()
+	private var participantList = [RegisteredParticipant]() {
 		didSet {
 			allParticipantsTableView.reloadData()
-			loadTotalNumberOfParticipants()
-			configureButtons()
+			getTotalParticipantsCount()
+			configureButtonVisibility()
 		}
 	}
 	
@@ -32,7 +32,6 @@ class RaffleDetailsParticpantListViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
 		setTableViewDelegatesAndDataSource()
 		setNavigationTitleToRaffleName()
 	}
@@ -40,10 +39,10 @@ class RaffleDetailsParticpantListViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		loadAllRaffleParticipants()
-		configureButtons()
+		configureButtonVisibility()
 	}
 	
-		
+	
 	// MARK: - Private Methods
 	
 	private func setTableViewDelegatesAndDataSource() {
@@ -55,8 +54,8 @@ class RaffleDetailsParticpantListViewController: UIViewController {
 		navigationItem.title = "\(raffle.name)"
 	}
 	
-	private func configureButtons() {
-		// MARK: - NOTE: Limit the number of participants for each raffle
+	private func configureButtonVisibility() {
+		// NOTE: Set a limit for the number of participants
 		
 		// if there is no winner and no participants
 		if raffle.winner_id == nil && participantList.count == 0 {
@@ -84,8 +83,8 @@ class RaffleDetailsParticpantListViewController: UIViewController {
 		}
 	}
 	
-	private func loadTotalNumberOfParticipants() {
-		 participantCountLabel.text = "Total Participants: \(participantList.count)"
+	private func getTotalParticipantsCount() {
+		participantCountLabel.text = "Total Participants: \(participantList.count)"
 	}
 	
 	private func loadAllRaffleParticipants() {
@@ -100,12 +99,6 @@ class RaffleDetailsParticpantListViewController: UIViewController {
 				}
 			}
 		}
-	}
-	
-	private func displayAlert(title: String, message: String) {
-		let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
-		alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-		present(alertVC, animated: true, completion: nil)
 	}
 	
 	// MARK: - Segue Methods
@@ -136,18 +129,16 @@ class RaffleDetailsParticpantListViewController: UIViewController {
 
 // MARK: - TableView Data Source & Delegate Extensions
 
-extension RaffleDetailsParticpantListViewController: UITableViewDataSource, UITableViewDelegate {
+extension RaffleDetailsViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return participantList.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "ParticipantCell", for: indexPath) as? ParticipantCell else { return UITableViewCell() }
-		let participant = participantList[indexPath.row]
-		cell.participantNameLabel.text = "\(participant.first_name) \(participant.last_name)"
-		cell.participantIdLabel.text = "\(participant.participant_id)"
-		cell.participantEmailLabel.text = "\(participant.email)"
-		cell.participantPhoneNumberLabel.text = participant.phone != nil ? "\(participant.phone!)" : "Not Available"
+		let participants = participantList[indexPath.row]
+		
+		cell.configureCell(with: participants)
 		return cell
 	}
 }

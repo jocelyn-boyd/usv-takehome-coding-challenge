@@ -22,34 +22,43 @@ class RaffleCell: UITableViewCell {
 	
 	// MARK: - Initializers
 	
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		// Initialization code
+	}
+	
+	override func setSelected(_ selected: Bool, animated: Bool) {
+		super.setSelected(selected, animated: animated)
+		
+		// Configure the view for the selected state
+	}
 	
 	// MARK: - Methods
 	func configureRaffleCell(with raffleData: AllRaffles) {
 		raffleTitleLabel.text = "\(raffleData.name)"
-		dateCreatedLabel.text = "Created: \(String(describing: raffleData.dateCreated))"
-
-		if raffleData.raffled_at != nil {
+		dateCreatedLabel.text = "Created: \(raffleData.dateCreated)"
+		
+		if raffleData.raffled_at != nil { // if there is a winner
 			winnerIdLabel.text = "Winner Id: \(String(describing: raffleData.winner_id!)) 🎉"
+			winnerIdLabel.textColor = .systemGreen
 			raffleWinnerImage.image = UIImage(systemName: "person.fill.checkmark")
+			raffleWinnerImage.tintColor = .systemGreen
+			
 			dateOfRaffleLabel.text = "Closed: \(String(describing: raffleData.dateRaffled!))"
 			dateOfRaffleLabel.textColor = .systemRed
-			closedRaffleImage.image = UIImage(systemName: "checkmark.seal.fill")
-		} else {
+			closedRaffleImage.image = UIImage(systemName: "checkmark.seal.fill")!.withTintColor(UIColor.systemRed)
+			closedRaffleImage.tintColor = .systemRed
+		}
+		else if raffleData.raffled_at == nil { // if there is no winner
 			winnerIdLabel.text = "No winner yet!"
+			winnerIdLabel.textColor = .systemGray
 			raffleWinnerImage.image = UIImage(systemName: "person.fill.xmark")
+			raffleWinnerImage.tintColor = .systemGray
+			
 			dateOfRaffleLabel.text = "Click on raffle to register!"
 			dateOfRaffleLabel.textColor = .systemGreen
 			closedRaffleImage.image = UIImage(systemName: "rectangle.and.pencil.and.ellipsis")
+			closedRaffleImage.tintColor = .systemGreen
 		}
 	}
 }

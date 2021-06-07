@@ -23,31 +23,30 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RaffleCell" id="Ck3-MO-jw9" userLabel="RaffleCell" customClass="RaffleCell" customModule="RaffleApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.333333969116211" width="350" height="203.66667175292969"/>
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="350" height="208.33332824707031"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ck3-MO-jw9" id="muv-32-Iba">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="203.66667175292969"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="208.33332824707031"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T3a-mX-cyy">
-                                                    <rect key="frame" x="5" y="5" width="340" height="193.66666666666666"/>
+                                                    <rect key="frame" x="5" y="5" width="340" height="198.33333333333334"/>
                                                     <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="6Mv-Jf-W4B">
-                                                    <rect key="frame" x="17.666666666666657" y="20.333333333333329" width="315" height="163"/>
+                                                    <rect key="frame" x="17.666666666666657" y="21" width="315" height="166.66666666666666"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Vadim's Raffle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uif-LF-EyQ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="315" height="30"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Vadim's Raffle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uif-LF-EyQ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="315" height="33.666666666666664"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                                            <color key="highlightedColor" systemColor="labelColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="eQi-Fz-tS4" userLabel="Date Created StackView">
-                                                            <rect key="frame" x="0.0" y="31" width="315" height="45"/>
+                                                            <rect key="frame" x="0.0" y="34.666666666666664" width="315" height="44.999999999999993"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aFU-zI-aS9">
                                                                     <rect key="frame" x="0.0" y="3.3333333333333321" width="46.333333333333329" height="40"/>
-                                                                    <color key="tintColor" systemColor="secondaryLabelColor"/>
+                                                                    <color key="tintColor" systemColor="systemGrayColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="aFU-zI-aS9" secondAttribute="height" multiplier="1:1" id="thX-1Z-BU2"/>
                                                                     </constraints>
@@ -65,12 +64,12 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Bnh-RR-OIZ" userLabel="Winner StackView">
-                                                            <rect key="frame" x="0.0" y="77" width="315" height="40"/>
+                                                            <rect key="frame" x="0.0" y="80.666666666666671" width="315" height="40"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5zt-bD-Tgm">
                                                                     <rect key="frame" x="0.0" y="3.6666666666666679" width="40" height="33.333333333333336"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <color key="tintColor" systemColor="secondaryLabelColor"/>
+                                                                    <color key="tintColor" systemColor="systemGrayColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="5zt-bD-Tgm" secondAttribute="height" multiplier="1:1" id="9AJ-LY-om7"/>
                                                                     </constraints>
@@ -88,11 +87,11 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="hxb-F4-oPE" userLabel="Date Of Raffle StackView">
-                                                            <rect key="frame" x="0.0" y="118" width="315" height="45"/>
+                                                            <rect key="frame" x="0.0" y="121.66666666666666" width="315" height="45"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.seal.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IXB-Wp-cBa">
                                                                     <rect key="frame" x="0.0" y="1.6666666666666643" width="45" height="42"/>
-                                                                    <color key="tintColor" systemColor="secondaryLabelColor"/>
+                                                                    <color key="tintColor" systemColor="systemGrayColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="IXB-Wp-cBa" secondAttribute="height" multiplier="1:1" id="0dS-Wa-NP6"/>
                                                                     </constraints>
@@ -188,6 +187,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book: Cracking the Coding Interview" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Zs-Yb-JG2">
                                                         <rect key="frame" x="0.0" y="37.333333333333314" width="316" height="46"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -207,7 +207,9 @@
                                                                     <constraint firstAttribute="height" constant="45" id="S8e-ri-GiI"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                <state key="normal" title="Generate Secret Token"/>
+                                                                <state key="normal" title="Generate Secret Token">
+                                                                    <color key="titleColor" systemColor="systemBlueColor"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="generateSecretToken:" destination="9pS-bW-ClH" eventType="touchUpInside" id="VcP-F4-cOb"/>
                                                                 </connections>
@@ -216,6 +218,7 @@
                                                     </stackView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HPr-tv-6jr">
                                                         <rect key="frame" x="0.0" y="135" width="316" height="46"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -243,7 +246,7 @@
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <size key="titleShadowOffset" width="5" height="0.0"/>
                                                 <state key="normal" title="Create New Raffle">
-                                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="createNewRaffle:" destination="9pS-bW-ClH" eventType="touchUpInside" id="a1C-u6-P4Q"/>
@@ -284,7 +287,7 @@
         <!--Raffle Name-->
         <scene sceneID="K8T-i2-yj1">
             <objects>
-                <viewController id="1pZ-wz-Fd3" customClass="RaffleDetailsParticpantListViewController" customModule="RaffleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1pZ-wz-Fd3" customClass="RaffleDetailsViewController" customModule="RaffleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="85r-Nc-WEO">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -298,7 +301,7 @@
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <state key="normal" title="Winner Info">
-                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <segue destination="9KP-WW-IkG" kind="show" identifier="winnerSegue" id="8jS-vf-Rgt"/>
@@ -309,7 +312,7 @@
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <state key="normal" title="Register">
-                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <segue destination="tHJ-TR-7n8" kind="show" identifier="registerNewParticipantSegue" id="Ec3-3r-b4L"/>
@@ -320,7 +323,7 @@
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <state key="normal" title="Draw Winner">
-                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <segue destination="wVH-3g-arg" kind="show" identifier="drawWinnerSegue" id="Jnn-3S-108"/>
@@ -353,7 +356,7 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TdV-nT-mKg">
                                                             <rect key="frame" x="0.0" y="0.0" width="58.333333333333336" height="105.33333333333334"/>
-                                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="tintColor" systemColor="systemGrayColor"/>
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="5"/>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="buO-ri-VkK" userLabel="Participant Stack View">
@@ -415,7 +418,6 @@
                                                                             <subviews>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yZr-Io-ehY">
                                                                                     <rect key="frame" x="0.0" y="1.3333333333333321" width="20" height="17.333333333333336"/>
-                                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <color key="tintColor" systemColor="systemGrayColor"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="20" id="5gk-5i-Uon"/>
@@ -536,7 +538,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTa-ms-5Ih">
                                         <rect key="frame" x="0.0" y="178.33333333333337" width="342" height="49.666666666666657"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <state key="normal" title="Submit">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -590,7 +592,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="BHb-ws-4mj"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -692,7 +694,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axs-dW-kae">
                                                         <rect key="frame" x="0.0" y="0.0" width="154" height="44"/>
                                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <state key="normal" title="Submit">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -703,7 +705,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdt-i4-TqJ">
                                                         <rect key="frame" x="162" y="0.0" width="154" height="44"/>
                                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <state key="normal" title="Clear"/>
                                                         <connections>
                                                             <action selector="clearFormButton:" destination="tHJ-TR-7n8" eventType="touchUpInside" id="87d-Pc-r6X"/>
@@ -768,12 +770,13 @@
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sparkles" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Zq6-pc-z2e">
                                                 <rect key="frame" x="0.0" y="-0.6666666666666714" width="316" height="85"/>
-                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                                <color key="tintColor" systemColor="systemYellowColor"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N7G-hr-l6q">
                                                 <rect key="frame" x="0.0" y="84.333333333333371" width="316" height="84.666666666666686"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZqW-1C-XvB">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participant Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZqW-1C-XvB">
                                                         <rect key="frame" x="0.0" y="0.0" width="316" height="42.333333333333336"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <nil key="textColor"/>
@@ -927,8 +930,8 @@
         <image name="phone.fill" catalog="system" width="128" height="114"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="sparkles" catalog="system" width="112" height="128"/>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -947,6 +950,9 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

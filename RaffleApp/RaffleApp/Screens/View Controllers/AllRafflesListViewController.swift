@@ -21,7 +21,7 @@ class AllRafflesListViewController: UIViewController {
 			navigationItem.title = "All Raffles (\(allRaffles.count))"
 		}
 	}
-	private var refreshControl: UIRefreshControl!
+	private var refreshControl: UIRefreshControl?
 	private var allRafflesSubscription: AnyCancellable?
 	
 	// MARK: - Lifecycle Methods
@@ -38,7 +38,7 @@ class AllRafflesListViewController: UIViewController {
 	
 	private func configureTableView() {
 		refreshControl = UIRefreshControl()
-		refreshControl.addTarget(self, action: #selector(loadAllRafflesData), for: .valueChanged)
+		refreshControl?.addTarget(self, action: #selector(loadAllRafflesData), for: .valueChanged)
 		allRafflesTableView.refreshControl = refreshControl
 		allRafflesTableView.delegate = self
 		allRafflesTableView.dataSource = self
@@ -54,7 +54,7 @@ class AllRafflesListViewController: UIViewController {
 			case nil:
 				break
 			}
-			self?.refreshControl.endRefreshing()
+			self?.refreshControl?.endRefreshing()
 		}
 	}
 	

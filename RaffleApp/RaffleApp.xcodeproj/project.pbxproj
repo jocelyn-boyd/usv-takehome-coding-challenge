@@ -33,7 +33,6 @@
 		0882F07026645F0C0070EF3F /* RaffleParticipantSample.json in Resources */ = {isa = PBXBuildFile; fileRef = 0882F06F26645F0C0070EF3F /* RaffleParticipantSample.json */; };
 		0882F072266482BF0070EF3F /* NewParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882F071266482BF0070EF3F /* NewParticipant.swift */; };
 		089E7CFB26649F9A0078DCD9 /* RaffleWinnerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089E7CFA26649F9A0078DCD9 /* RaffleWinnerInfo.swift */; };
-		089E7CFD2664A2B10078DCD9 /* RaffleWinnerSample.json in Resources */ = {isa = PBXBuildFile; fileRef = 089E7CFC2664A2B10078DCD9 /* RaffleWinnerSample.json */; };
 		089E7CFF2664B3C00078DCD9 /* RaffleDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089E7CFE2664B3C00078DCD9 /* RaffleDetails.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,7 +77,6 @@
 		0882F06F26645F0C0070EF3F /* RaffleParticipantSample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RaffleParticipantSample.json; sourceTree = "<group>"; };
 		0882F071266482BF0070EF3F /* NewParticipant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewParticipant.swift; sourceTree = "<group>"; };
 		089E7CFA26649F9A0078DCD9 /* RaffleWinnerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleWinnerInfo.swift; sourceTree = "<group>"; };
-		089E7CFC2664A2B10078DCD9 /* RaffleWinnerSample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RaffleWinnerSample.json; sourceTree = "<group>"; };
 		089E7CFE2664B3C00078DCD9 /* RaffleDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,7 +111,6 @@
 			children = (
 				0882F05F2663E6E10070EF3F /* AllRafflesSample.json */,
 				0882F06F26645F0C0070EF3F /* RaffleParticipantSample.json */,
-				089E7CFC2664A2B10078DCD9 /* RaffleWinnerSample.json */,
 			);
 			path = SampleJSON;
 			sourceTree = "<group>";
@@ -318,7 +315,6 @@
 				0882F02B26618ED90070EF3F /* LaunchScreen.storyboard in Resources */,
 				0882F02826618ED90070EF3F /* Assets.xcassets in Resources */,
 				0882F02626618ED80070EF3F /* Main.storyboard in Resources */,
-				089E7CFD2664A2B10078DCD9 /* RaffleWinnerSample.json in Resources */,
 				0882F0602663E6E10070EF3F /* AllRafflesSample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

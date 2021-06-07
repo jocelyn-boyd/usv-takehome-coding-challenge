@@ -64,19 +64,19 @@ class RaffleDetailsParticpantListViewController: UIViewController {
 			drawWinnerButton.isHidden = true
 			winnerInfoButton.isHidden = true
 		}
-		// there is no winner and less than 2 participants
+		// if there is no winner and less than 2 participants
 		else if raffle.winner_id == nil && participantList.count < 2 {
 			registrationButton.isHidden = false
 			drawWinnerButton.isHidden = true
 			winnerInfoButton.isHidden = true
 		}
-		// there is no winner and 2 or more participants
+		// if there is no winner and 2 or more participants
 		else if raffle.winner_id == nil && participantList.count > 2 {
 			registrationButton.isHidden = false
 			drawWinnerButton.isHidden = false
 			winnerInfoButton.isHidden = true
 		}
-		// there is a winner
+		// if there is a winner
 		else if raffle.winner_id != nil {
 			registrationButton.isHidden = true
 			drawWinnerButton.isHidden = true
@@ -123,16 +123,15 @@ class RaffleDetailsParticpantListViewController: UIViewController {
 				fatalError("Unexpected segue VC")
 			}
 			drawWinnerVC.raffle = raffle
-		case "winnerInfoSegue":
-			guard let winnerInfo = segue.destination as? RaffleWinnerInfoViewController else {
+		case "winnerSegue":
+			guard let winnerVC = segue.destination as? RaffleWinnerInfoViewController else {
 				fatalError("Unexpected segue VC")
 			}
-			winnerInfo.raffles = raffle
+			winnerVC.raffles = raffle
 		default:
 			fatalError("Unexpected segue identifier")
 		}
 	}
-	
 }
 
 // MARK: - TableView Data Source & Delegate Extensions

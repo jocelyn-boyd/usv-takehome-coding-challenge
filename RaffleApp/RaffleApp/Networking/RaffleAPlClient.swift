@@ -15,7 +15,12 @@ struct RaffleAPIClient {
 	
 	// MARK: - Properties and Initializers
 	private let rootEndpoint = "https://raffle-fs-app.herokuapp.com"
-	public let allRaffles = CurrentValueSubject<Result<[AllRaffles], AppError>?,Never>(nil)
+	
+	public let allRaffles = CurrentValueSubject<
+		// 2 Generic Types
+		Result<[AllRaffles], AppError>?, // value being held
+		Never // Failure type
+	>(nil) // setting the initial value
 	
 	var raffleURL: URL {
 		guard let url = URL(string: rootEndpoint + "/api/raffles") else {
@@ -27,6 +32,7 @@ struct RaffleAPIClient {
 	private init() {}
 	
 	// MARK: Methods
+	// hit the API and store is as a value
 	func refreshAllRaffles() {
 		getAllRaffles { result in
 			allRaffles.value = result

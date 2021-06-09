@@ -4,6 +4,14 @@
 //
 //  Created by Jocelyn Boyd on 5/28/21.
 //
+/*
+- create a variable to hold the new array
+- write a function and call that function in the success
+- input: [AllRaffles], output: open allraffles on top, closed all raffles on the bottom
+-  logic:
+	
+
+*/
 
 import UIKit
 import Combine
@@ -23,6 +31,8 @@ class AllRafflesListViewController: UIViewController {
 	}
 	private var refreshControl: UIRefreshControl?
 	private var allRafflesSubscription: AnyCancellable?
+	private var searchBarInput = "123"
+
 	
 	// MARK: - Lifecycle Methods
 	
@@ -35,7 +45,7 @@ class AllRafflesListViewController: UIViewController {
 	}
 	
 	// MARK: - Private Methods
-	
+
 	private func configureTableView() {
 		allRafflesTableView.delegate = self
 		allRafflesTableView.dataSource = self
@@ -50,11 +60,12 @@ class AllRafflesListViewController: UIViewController {
 	private func subscribeToAllRaffles() {
 		allRafflesSubscription = RaffleAPIClient.manager.allRaffles.receive(on: DispatchQueue.main).sink { [weak self] result in
 			switch result {
-			case let .success(raffles):	// sorted in newest to oldest
-				self?.allRaffles = raffles.sorted {$0.created_at > $1.created_at}
+			case let .success(raffles):
+				self?.allRaffles = raffles.sorted { $0.created_at > $1.created_at }
+				
 			case let .failure(error):
 				print(error.localizedDescription)
-			case nil:
+			case nil: // hasn't loaded yet
 				break
 			}
 			self?.refreshControl?.endRefreshing()

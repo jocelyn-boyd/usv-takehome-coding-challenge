@@ -26,14 +26,12 @@ class AllRafflesListViewController: UIViewController {
 	private var allRaffles = [AllRaffles]() {
 		didSet {
 			allRafflesTableView.reloadData()
-			navigationItem.title = "All Raffles"
+			//navigationItem.title = "All Raffles (\(allRaffles.count))"
 		}
 	}
 	private var refreshControl: UIRefreshControl?
 	private var allRafflesSubscription: AnyCancellable?
-	private var searchBarInput = "123"
 
-	
 	// MARK: - Lifecycle Methods
 	
 	override func viewDidLoad() {
@@ -60,9 +58,8 @@ class AllRafflesListViewController: UIViewController {
 	private func subscribeToAllRaffles() {
 		allRafflesSubscription = RaffleAPIClient.manager.allRaffles.receive(on: DispatchQueue.main).sink { [weak self] result in
 			switch result {
-			case let .success(raffles):
-				self?.allRaffles = raffles.sorted { $0.created_at > $1.created_at }
-				
+			case let .success(raffles):	
+				self?.allRaffles = raffles
 			case let .failure(error):
 				print(error.localizedDescription)
 			case nil: // hasn't loaded yet

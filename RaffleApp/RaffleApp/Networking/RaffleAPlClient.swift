@@ -6,15 +6,21 @@
 //
 
 import Foundation
+import Combine
 struct RaffleAPIClient {
 	
 	// MARK: - Static Properties
 	
 	static let manager = RaffleAPIClient()
 	
-	// MARK: - Private Properties and Initializers
+	// MARK: - Properties and Initializers
 	private let rootEndpoint = "https://raffle-fs-app.herokuapp.com"
 	
+	public let allRaffles = CurrentValueSubject<
+		// 2 Generic Types
+		Result<[AllRaffles], AppError>?, // value being held
+		Never // Failure type
+	>(nil) // setting the initial value
 	
 	var raffleURL: URL {
 		guard let url = URL(string: rootEndpoint + "/api/raffles") else {
@@ -25,7 +31,15 @@ struct RaffleAPIClient {
 	
 	private init() {}
 	
-	// MARK: - GET Requests
+	// MARK: Methods
+	// hit the API and store is as a value
+	func refreshAllRaffles() {
+		getAllRaffles { result in
+			allRaffles.value = result
+		}
+	}
+	
+	// MARK: - GET Requests Methods
 	
 	func getAllRaffles(completionHandler: @escaping (Result<[AllRaffles], AppError>) -> Void) {
 		NetworkHelper.manager.performDataTask(withUrl: raffleURL, andMethod: .get) { result in
@@ -120,9 +134,9 @@ struct RaffleAPIClient {
 		}
 	}
 	
-
 	
-	// MARK: - POST Requests
+	
+	// MARK: - POST Requests Methods
 	
 	func postNewRaffle(_ raffle: NewRaffle, completionHandler: @escaping (Result<Data, AppError>) -> Void) {
 		guard let encodedRaffleData = try? JSONEncoder().encode(raffle) else {
@@ -166,7 +180,8 @@ struct RaffleAPIClient {
 																					})
 	}
 	
-	// MARK: PUT Requests
+	// MARK: PUT Requests Methods
+	
 	func putSecretTokenToGetRaffleWinner(with raffle_id: Int, secret_token: Token, completionHandler: @escaping (Result<Data, AppError>) -> Void) {
 		guard let encodedSecretTokenData = try? JSONEncoder().encode(secret_token) else {
 			fatalError("Unable to json encode project")

@@ -15,7 +15,7 @@ struct RaffleWinnerInfo: Codable {
 	let email: String
 	let phone: String?
 	let registered_at: String
-
+	
 	private enum CodingKeys: String, CodingKey {
 		case participant_id = "id"
 		case raffle_id
@@ -28,11 +28,11 @@ struct RaffleWinnerInfo: Codable {
 	
 	var dateRegistered: String  {
 		let dateRegistered = registered_at
-
+		
 		let dateFormatter = DateFormatter()
 		dateFormatter.locale = Locale(identifier: "en_US_POSIX")
 		dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-
+		
 		let date = dateFormatter.date(from: dateRegistered)
 		
 		dateFormatter.dateStyle = .medium
@@ -49,5 +49,4 @@ struct RaffleWinnerInfo: Codable {
 			throw JSONError.decodingError(error)
 		}
 	}
-	
 }

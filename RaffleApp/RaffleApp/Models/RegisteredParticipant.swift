@@ -28,11 +28,11 @@ struct RegisteredParticipant: Codable {
 	
 	var dateRegistered: String  {
 		let dateRegisteredString = registered_at
-
+		
 		let dateFormatter = DateFormatter()
 		dateFormatter.locale = Locale(identifier: "en_US_POSIX")
 		dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-
+		
 		let date = dateFormatter.date(from: dateRegisteredString)
 		
 		dateFormatter.dateStyle = .medium
@@ -42,12 +42,11 @@ struct RegisteredParticipant: Codable {
 	}
 	
 	static func getAllParticipants(from jsonData: Data) throws -> [RegisteredParticipant] {
-	do {
-		 let raffles = try JSONDecoder().decode([RegisteredParticipant].self, from: jsonData)
-		 return raffles
-	 } catch {
-		 throw JSONError.decodingError(error)
-	 }
- }
-
+		do {
+			let raffles = try JSONDecoder().decode([RegisteredParticipant].self, from: jsonData)
+			return raffles
+		} catch {
+			throw JSONError.decodingError(error)
+		}
+	}
 }

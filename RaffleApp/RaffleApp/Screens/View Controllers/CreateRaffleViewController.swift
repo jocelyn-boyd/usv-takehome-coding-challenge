@@ -14,7 +14,7 @@ class CreateRaffleViewController: UIViewController {
 	@IBOutlet private weak var secretTokenTextField: UITextField!
 	@IBOutlet private weak var postButton: UIButton!
 	
-	// MARK: - Private Properties
+	// MARK: - Properties
 	
 	private var validateTextFields: (raffleName: String, token: String)? {
 		guard let name = raffleNameTextField.text, !name.isEmpty,
@@ -31,36 +31,39 @@ class CreateRaffleViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
 	}
 	
 	// MARK: - IBActions
 	
 	@IBAction private func generateSecretToken(_ sender: UIButton) {
-		let randomString = NewRaffle.randomString(length: 6)
-		secretTokenTextField.text = randomString
+		let inputString = NewRaffle.generateRandomString()
+		secretTokenTextField.text = inputString
 	}
 	
 	@IBAction private func createNewRaffle(_ sender: UIButton) {
 		guard let _ = validateTextFields else { return }
-		guard let raffle = createRaffleFromFields() else {
+		guard let raffle = createRaffleFromUserInput() else {
 			displayInvalidRaffleAlert()
 			return
 		}
-	
+		
 		RaffleAPIClient.manager.postNewRaffle(raffle) { [weak self] result in
-			switch result {
-			case .success:
-				self?.displayPostSuccessfulAlert()
-			case let .failure(error):
-				self?.displayPostFailureAlert(with: error)
+			DispatchQueue.main.async {
+				switch result {
+				case .success:
+					self?.displayPostSuccessAlert()
+					RaffleAPIClient.manager.refreshAllRaffles()
+				case let .failure(error):
+					
+					self?.displayPostFailureAlert(with: error)
+				}
 			}
 		}
 	}
 	
 	// MARK: - Private Methods
 	
-	private func createRaffleFromFields() -> NewRaffle? {
+	private func createRaffleFromUserInput() -> NewRaffle? {
 		guard let raffleName = raffleNameTextField.text,
 					let secretToken = secretTokenTextField.text else {
 			return nil
@@ -68,8 +71,8 @@ class CreateRaffleViewController: UIViewController {
 		return NewRaffle(name: raffleName, secret_token: secretToken)
 	}
 	
-	private func displayPostSuccessfulAlert() {
-		let alertVC = UIAlertController(title: "Success!", message: "\(raffleNameTextField.text!) raffle posted!", preferredStyle: .alert)
+	private func displayPostSuccessAlert() {
+		let alertVC = UIAlertController(title: "Success! ✅", message: "\(raffleNameTextField.text!) raffle posted!", preferredStyle: .alert)
 		alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
 			self.navigationController?.popToRootViewController(animated: true)
 		}))
@@ -77,7 +80,7 @@ class CreateRaffleViewController: UIViewController {
 	}
 	
 	private func displayPostFailureAlert(with error: Error) {
-		displayAlert(title: "Error posting new Raffle", message: error.localizedDescription)
+		displayAlert(title: "Error posting new Raffle ❌", message: error.localizedDescription)
 	}
 	
 	private func displayInvalidRaffleAlert() {

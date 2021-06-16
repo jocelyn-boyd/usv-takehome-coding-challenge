@@ -8,8 +8,8 @@
 import UIKit
 
 class RaffleWinnerInfoViewController: UIViewController {
-
-	// MARK: - IBOutlers
+	
+	// MARK: - IBOutlets
 	
 	@IBOutlet weak var participantNameLabel: UILabel!
 	@IBOutlet weak var dateRegisteredLabel: UILabel!
@@ -18,13 +18,14 @@ class RaffleWinnerInfoViewController: UIViewController {
 	@IBOutlet weak var participantPhoneNumberLabel: UILabel!
 	
 	// MARK: - Properties
+	
 	var raffles: AllRaffles!
 	
 	
 	// MARK: - Lifecycle Methods
 	
 	override func viewDidLoad() {
-        super.viewDidLoad()
+		super.viewDidLoad()
 		loadWinnerInformation()
 	}
 	
@@ -39,7 +40,7 @@ class RaffleWinnerInfoViewController: UIViewController {
 					self?.dateRegisteredLabel.text = "Registered: \(details.dateRegistered)"
 					self?.participantIdLabel.text = "\(details.participant_id)"
 					self?.participantEmailLabel.text = "\(details.email)"
-					self?.participantPhoneNumberLabel.text = details.phone != nil ? "\(String(describing: details.phone))" : "Not Available"
+					self?.participantPhoneNumberLabel.text = details.phone != nil ? "\(String(describing: details.phone!))" : "Not Available"
 				case let .failure(error):
 					print(error.localizedDescription) // There is no winner yet.
 				}

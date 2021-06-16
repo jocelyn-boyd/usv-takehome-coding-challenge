@@ -33,7 +33,7 @@ class DrawRaffleWinnerViewController: UIViewController {
 		super.viewDidLoad()
 		loadRaffleSecretToken()
 	}
-
+	
 	// MARK: - IBActions
 	
 	@IBAction private func drawRaffleWinnerButton(_ sender: UIButton) {
@@ -45,7 +45,7 @@ class DrawRaffleWinnerViewController: UIViewController {
 			displayInvalidTokenAlert()
 			return
 		}
-	
+		
 		loadRaffleWinnerFromParticipantList()
 	}
 	
@@ -83,6 +83,7 @@ class DrawRaffleWinnerViewController: UIViewController {
 				switch result {
 				case .success:
 					self?.displaySuccessAlert()
+					RaffleAPIClient.manager.refreshAllRaffles()
 				case let .failure(error):
 					print(error.localizedDescription)
 				}
@@ -91,6 +92,7 @@ class DrawRaffleWinnerViewController: UIViewController {
 	}
 	
 	// MARK: Alert Methods
+	
 	private func displaySuccessAlert() {
 		let alertVC = UIAlertController(title: "Success! ✅", message: "A winner has been chosen!", preferredStyle: .alert)
 		alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
